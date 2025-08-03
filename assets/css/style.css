@@ -43,6 +43,34 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     padding: 1rem 0;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+}
+
+.navbar .container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .container {
+        padding-left: 0.5rem !important;
+        padding-right: 70px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        padding-left: 0.25rem !important;
+        padding-right: 60px !important;
+    }
 }
 
 .navbar-brand img {
@@ -108,6 +136,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile Navbar */
 @media (max-width: 991.98px) {
+    .navbar {
+        padding: 0.5rem 0.5rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar .container {
+        padding-right: 70px !important;
+        position: relative !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar-brand {
+        max-width: calc(100% - 80px) !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar-brand img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
     .navbar-toggler {
         border: 2px solid var(--primary-color) !important;
         background: var(--primary-color) !important;
@@ -115,6 +168,15 @@ h1, h2, h3, h4, h5, h6 {
         border-radius: 8px !important;
         box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3) !important;
         transition: all 0.3s ease !important;
+        position: absolute !important;
+        right: 0.5rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
     }
     
     .navbar-toggler:hover {
@@ -130,6 +192,8 @@ h1, h2, h3, h4, h5, h6 {
     
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        width: 20px !important;
+        height: 20px !important;
     }
     
     .navbar-collapse {
@@ -720,7 +784,8 @@ textarea.form-control {
     }
     
     .navbar .container {
-        padding-right: 50px !important;
+        padding-right: 55px !important;
+        position: relative !important;
     }
     
     .navbar-toggler {
@@ -855,20 +920,43 @@ body {
 @media (max-width: 480px) {
     .navbar {
         padding: 0.25rem 0.25rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
     }
     
     .navbar .container {
-        padding-right: 45px !important;
+        padding-right: 60px !important;
+        position: relative !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar-brand {
+        max-width: calc(100% - 70px) !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar-brand img {
+        max-width: 100% !important;
+        height: auto !important;
     }
     
     .navbar-toggler {
         right: 0.25rem !important;
-        min-width: 30px !important;
-        min-height: 30px !important;
-        padding: 0.2rem 0.4rem !important;
+        min-width: 35px !important;
+        min-height: 35px !important;
+        max-width: 35px !important;
+        max-height: 35px !important;
+        padding: 0.25rem 0.5rem !important;
         border: 2px solid var(--primary-color) !important;
         background: var(--primary-color) !important;
         transition: all 0.3s ease !important;
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
     }
     
     .navbar-toggler:hover {
@@ -882,7 +970,7 @@ body {
     }
     
     .navbar-toggler-icon {
-        width: 18px !important;
+        width: 16px !important;
         height: 18px !important;
     }
 }
