@@ -3,287 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Avedh - Premium Digital Marketing Agency</title>
-    <meta name="description" content="Marketing Avedh - Full-cycle digital marketing services using data-driven strategies and innovative campaigns from traffic to revenue">
-    <meta name="keywords" content="digital marketing, SEO, PPC, social media marketing, web design, branding">
+    <title>Marketing Avedh - Premium Digital Marketing Solutions</title>
+    <meta name="description" content="Premium digital marketing services for global success. SEO, PPC, Social Media Marketing and more.">
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        'primary-dark': '#4f46e5',
+                        secondary: '#f59e0b',
+                        accent: '#10b981',
+                        dark: '#1f2937',
+                        light: '#f8fafc',
+                        gray: '#6b7280',
+                        border: '#e5e7eb'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="font-inter text-gray-800" style="min-height: 100vh; display: flex; flex-direction: column;">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/images/logo.svg" alt="Marketing Avedh" height="40">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary ms-2" href="#contact">Get Free Audit</a>
-                    </li>
-                </ul>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 navbar-1">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/images/logo.svg" alt="Marketing Avedh" class="h-8 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex lg:items-center lg:space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors duration-200">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors duration-200">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors duration-200">About</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary font-medium transition-colors duration-200">Portfolio</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors duration-200">Contact</a>
+                    <a href="#contact" class="bg-gradient-to-r from-primary to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">Get Free Audit</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="bg-primary text-white p-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg border border-gray-200 m-2">
+                    <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Home</a>
+                    <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Services</a>
+                    <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">About</a>
+                    <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Portfolio</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200">Contact</a>
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-primary to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">Get Free Audit</a>
+                </div>
             </div>
         </div>
     </nav>
 
-
+    <!-- Main Content -->
+    <main class="flex-1">
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-bg">
-            <video autoplay muted loop class="hero-video">
-                <source src="assets/videos/hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="hero-title">
-                        Premium Digital Marketing<br>
-                        <span class="text-gradient">for Global Success</span>
+    <section id="home" class="relative min-h-screen flex items-center bg-gradient-to-br from-dark via-primary to-purple-800 overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-20">
+            <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-purple-600/80"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Premium Digital Marketing
+                        <span class="bg-gradient-to-r from-secondary to-orange-500 bg-clip-text text-transparent">for Global Success</span>
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="text-xl text-white/90 mb-8 leading-relaxed">
                         With data-driven marketing strategies and innovative campaigns, we help businesses impact the metrics that matter most, from traffic to revenue.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary btn-lg me-3">Get Free Audit</a>
-                        <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-gradient-to-r from-secondary to-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 text-center">Get Free Audit</a>
+                        <a href="#services" class="border-2 border-white/80 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-200 text-center">Our Services</a>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="hero-image">
-                        <img src="assets/images/hero-illustration.svg" alt="Digital Marketing" class="img-fluid">
-                    </div>
+                <div data-aos="fade-left" class="text-center lg:text-right">
+                    <img src="assets/images/hero-illustration.svg" alt="Digital Marketing" class="w-full max-w-lg mx-auto lg:ml-auto">
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#services" class="scroll-down">
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <a href="#services" class="text-white text-2xl animate-bounce">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-                    <h6 class="section-subtitle">Our Core Services</h6>
-                    <h2 class="section-title">Premium Digital Marketing Solutions</h2>
-                    <p class="section-description">Comprehensive digital marketing services designed to drive growth and maximize ROI</p>
-                </div>
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h6 class="text-primary font-semibold text-sm uppercase tracking-wider mb-2">Our Core Services</h6>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Premium Digital Marketing Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive digital marketing services designed to drive growth and maximize ROI</p>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h4>Search Engine Optimization</h4>
-                        <p>Comprehensive SEO strategies to improve your website's visibility and drive organic traffic from search engines.</p>
-                        <ul class="service-features">
-                            <li>On-page & Off-page SEO</li>
-                            <li>Technical SEO Optimization</li>
-                            <li>Local SEO Services</li>
-                            <li>SEO Analytics & Reporting</li>
-                        </ul>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SEO Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-purple-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Search Engine Optimization</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive SEO strategies to improve your website's visibility and drive organic traffic from search engines.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            On-page & Off-page SEO
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Technical SEO Optimization
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Local SEO Services
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            SEO Analytics & Reporting
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-ad"></i>
-                        </div>
-                        <h4>Pay-Per-Click Advertising</h4>
-                        <p>Strategic PPC campaigns across Google Ads, Facebook Ads, and other platforms to generate immediate results.</p>
-                        <ul class="service-features">
-                            <li>Google Ads Management</li>
-                            <li>Social Media Advertising</li>
-                            <li>Remarketing Campaigns</li>
-                            <li>Conversion Optimization</li>
-                        </ul>
+                
+                <!-- PPC Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary to-orange-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-ad text-white text-2xl"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pay-Per-Click Advertising</h3>
+                    <p class="text-gray-600 mb-6">Strategic PPC campaigns that drive targeted traffic and maximize your advertising budget with measurable results.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Google Ads Management
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Facebook & Instagram Ads
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Remarketing Campaigns
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Conversion Optimization
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                        <h4>Social Media Marketing</h4>
-                        <p>Engaging social media strategies to build brand awareness and connect with your target audience.</p>
-                        <ul class="service-features">
-                            <li>Content Strategy & Creation</li>
-                            <li>Community Management</li>
-                            <li>Influencer Partnerships</li>
-                            <li>Social Media Analytics</li>
-                        </ul>
+                
+                <!-- Social Media Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-green-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-share-alt text-white text-2xl"></i>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h4>Brand Design & Identity</h4>
-                        <p>Professional brand design services to create memorable visual identities that resonate with your audience.</p>
-                        <ul class="service-features">
-                            <li>Logo Design & Branding</li>
-                            <li>Visual Identity Systems</li>
-                            <li>Marketing Collateral</li>
-                            <li>Brand Guidelines</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Web Design & Development</h4>
-                        <p>Custom website design and development that converts visitors into customers and drives business growth.</p>
-                        <ul class="service-features">
-                            <li>Responsive Web Design</li>
-                            <li>E-commerce Development</li>
-                            <li>WordPress Development</li>
-                            <li>Website Maintenance</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Digital Strategy Consulting</h4>
-                        <p>Strategic digital marketing consulting to align your marketing efforts with business objectives.</p>
-                        <ul class="service-features">
-                            <li>Marketing Strategy Development</li>
-                            <li>Competitive Analysis</li>
-                            <li>Performance Optimization</li>
-                            <li>ROI Tracking & Reporting</li>
-                        </ul>
-                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Media Marketing</h3>
+                    <p class="text-gray-600 mb-6">Engaging social media strategies that build brand awareness and foster meaningful connections with your audience.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Content Strategy & Creation
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Community Management
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Influencer Partnerships
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            Performance Analytics
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h6 class="section-subtitle">About Marketing Avedh</h6>
-                    <h2 class="section-title">We Drive Digital Success</h2>
-                    <p class="about-description">
-                        Marketing Avedh is a premium digital marketing agency that specializes in data-driven strategies and innovative campaigns. With years of experience across multiple industries, we help businesses achieve their digital marketing goals and maximize their online presence.
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h6 class="text-primary font-semibold text-sm uppercase tracking-wider mb-2">About Us</h6>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Driving Digital Success Through Innovation</h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        We are a team of passionate digital marketers dedicated to helping businesses achieve their online goals. With years of experience and a data-driven approach, we deliver results that matter.
                     </p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Data-driven approach to marketing</span>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-accent text-xl mr-4"></i>
+                            <span class="text-lg text-gray-700">Data-Driven Strategies</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Proven track record of success</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-accent text-xl mr-4"></i>
+                            <span class="text-lg text-gray-700">Expert Team</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Transparent reporting and analytics</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Dedicated account management</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy text-accent text-xl mr-4"></i>
+                            <span class="text-lg text-gray-700">Proven Results</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="about-image">
-                        <img src="assets/images/about-illustration.svg" alt="About Marketing Avedh" class="img-fluid">
-                    </div>
+                <div data-aos="fade-left" class="text-center">
+                    <img src="assets/images/about-illustration.svg" alt="About Us" class="w-full max-w-lg mx-auto">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-                    <h6 class="section-subtitle">Our Work</h6>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-description">Discover how we've helped businesses achieve their digital marketing goals</p>
-                </div>
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h6 class="text-primary font-semibold text-sm uppercase tracking-wider mb-2">Our Work</h6>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Success Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover how we've helped businesses achieve remarkable growth through strategic digital marketing</p>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-1.jpg" alt="E-commerce Project" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>E-commerce SEO</h5>
-                                    <p>Increased organic traffic by 300% for an online retail store</p>
-                                    <a href="#" class="btn btn-light btn-sm">View Case Study</a>
-                                </div>
-                            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
+                        <img src="https://via.placeholder.com/400x300/6366f1/ffffff?text=E-commerce+Success" alt="E-commerce Success" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">E-commerce Success</h3>
+                            <p class="text-white/90">300% increase in online sales through comprehensive digital marketing strategy</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-2.jpg" alt="Healthcare Marketing" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>Healthcare Marketing</h5>
-                                    <p>Generated 500+ qualified leads for a medical practice</p>
-                                    <a href="#" class="btn btn-light btn-sm">View Case Study</a>
-                                </div>
-                            </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
+                        <img src="https://via.placeholder.com/400x300/f59e0b/ffffff?text=Local+Business+Growth" alt="Local Business Growth" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">Local Business Growth</h3>
+                            <p class="text-white/90">500% increase in local search visibility and customer inquiries</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-3.jpg" alt="SaaS Marketing" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>SaaS Marketing</h5>
-                                    <p>Improved conversion rate by 150% for a software company</p>
-                                    <a href="#" class="btn btn-light btn-sm">View Case Study</a>
-                                </div>
-                            </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
+                        <img src="https://via.placeholder.com/400x300/10b981/ffffff?text=SaaS+Marketing" alt="SaaS Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">SaaS Marketing</h3>
+                            <p class="text-white/90">200% increase in qualified leads through targeted PPC campaigns</p>
                         </div>
                     </div>
                 </div>
@@ -292,110 +309,113 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-                    <h6 class="section-subtitle">Get In Touch</h6>
-                    <h2 class="section-title">Ready to Grow Your Business?</h2>
-                    <p class="section-description">Let's discuss how we can help you achieve your digital marketing goals</p>
-                </div>
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h6 class="text-primary font-semibold text-sm uppercase tracking-wider mb-2">Get In Touch</h6>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Ready to Grow Your Business?</h2>
+                <p class="text-xl text-gray-600">Let's discuss how we can help you achieve your digital marketing goals</p>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-form" data-aos="fade-up">
-                        <form action="process.php" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="company" placeholder="Company Name">
-                                </div>
-                                <div class="col-12">
-                                    <select class="form-select" name="service" required>
-                                        <option value="">Select Service</option>
-                                        <option value="seo">Search Engine Optimization</option>
-                                        <option value="ppc">Pay-Per-Click Advertising</option>
-                                        <option value="social">Social Media Marketing</option>
-                                        <option value="design">Brand Design & Identity</option>
-                                        <option value="web">Web Design & Development</option>
-                                        <option value="consulting">Digital Strategy Consulting</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">Get Free Audit</button>
-                                </div>
-                            </div>
-                        </form>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12" data-aos="fade-up" data-aos-delay="100">
+                <form action="process.php" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200">
+                        </div>
                     </div>
-                </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200">
+                    </div>
+                    <div>
+                        <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
+                        <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200">
+                            <option value="">Select a service</option>
+                            <option value="seo">Search Engine Optimization</option>
+                            <option value="ppc">Pay-Per-Click Advertising</option>
+                            <option value="social">Social Media Marketing</option>
+                            <option value="content">Content Marketing</option>
+                            <option value="email">Email Marketing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-gradient-to-r from-primary to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <img src="assets/images/logo-white.svg" alt="Marketing Avedh" height="40" class="mb-3">
-                    <p class="text-light">Premium digital marketing agency helping businesses achieve their online goals through data-driven strategies and innovative campaigns.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+    <footer class="text-white py-16" style="display: block !important; visibility: visible !important; opacity: 1 !important; position: relative !important; z-index: 10 !important; background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4f46e5 100%) !important;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <img src="assets/images/logo-white.svg" alt="Marketing Avedh" class="h-8 w-auto mb-4">
+                    <p class="text-white/80 mb-6 max-w-md">
+                        Premium digital marketing services that drive real results. We help businesses grow through strategic, data-driven marketing solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/70 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5 class="text-light mb-3">Services</h5>
-                    <ul class="footer-links">
-                        <li><a href="#services">SEO</a></li>
-                        <li><a href="#services">PPC</a></li>
-                        <li><a href="#services">Social Media</a></li>
-                        <li><a href="#services">Web Design</a></li>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">SEO</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">PPC</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">Social Media</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">Content Marketing</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5 class="text-light mb-3">Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">Portfolio</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">Contact</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors duration-200">Blog</a></li>
                     </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5 class="text-light mb-3">Contact Info</h5>
-                    <div class="contact-info">
-                        <p class="text-light mb-2"><i class="fas fa-envelope me-2"></i>hello@marketingavedh.com</p>
-                        <p class="text-light mb-2"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
-                        <p class="text-light mb-2"><i class="fas fa-map-marker-alt me-2"></i>123 Business Ave, Suite 100<br>New York, NY 10001</p>
-                    </div>
                 </div>
             </div>
-            <hr class="border-light my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-light mb-0">&copy; 2024 Marketing Avedh. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="text-light mb-0">Privacy Policy | Terms of Service</p>
-                </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center">
+                <p class="text-white/70">&copy; 2024 Marketing Avedh. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
-</html> 
+</html>

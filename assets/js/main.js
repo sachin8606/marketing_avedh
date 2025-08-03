@@ -6,15 +6,47 @@ AOS.init({
     offset: 100
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            // Toggle mobile menu visibility
+            mobileMenu.classList.toggle('hidden');
+            
+            // Change hamburger icon
+            const svg = mobileMenuButton.querySelector('svg');
+            if (mobileMenu.classList.contains('hidden')) {
+                // Show hamburger icon
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            } else {
+                // Show close icon
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                // Reset hamburger icon
+                const svg = mobileMenuButton.querySelector('svg');
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                // Reset hamburger icon
+                const svg = mobileMenuButton.querySelector('svg');
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+        });
     }
 });
 
@@ -24,12 +56,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Account for fixed navbar height
+            const navbarHeight = 64; // 4rem = 64px
+            const targetPosition = target.offsetTop - navbarHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/98', 'shadow-lg');
+        navbar.classList.remove('bg-white/95');
+    } else {
+        navbar.classList.add('bg-white/95');
+        navbar.classList.remove('bg-white/98', 'shadow-lg');
+    }
 });
 
 // Form submission handling
@@ -68,29 +116,16 @@ document.addEventListener('DOMContentLoaded', function() {
 function showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
-            <span>${message}</span>
-            <button class="notification-close">&times;</button>
-        </div>
-    `;
+    notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
+        type === 'success' ? 'bg-green-500 text-white' : 'bg-blue-500 text-white'
+    }`;
     
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#10b981' : '#6366f1'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 400px;
+    notification.innerHTML = `
+        <div class="flex items-center">
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'} mr-3"></i>
+            <span>${message}</span>
+            <button class="ml-4 text-white hover:text-gray-200" onclick="this.parentElement.parentElement.remove()">&times;</button>
+        </div>
     `;
     
     // Add to page
@@ -98,54 +133,19 @@ function showNotification(message, type = 'info') {
     
     // Animate in
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
+        notification.classList.remove('translate-x-full');
     }, 100);
-    
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    });
     
     // Auto remove after 5 seconds
     setTimeout(() => {
-        if (document.body.contains(notification)) {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                if (document.body.contains(notification)) {
-                    document.body.removeChild(notification);
-                }
-            }, 300);
-        }
+        notification.classList.add('translate-x-full');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
     }, 5000);
 }
 
-// Service card hover effects
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
-
-// Portfolio card hover effects
-document.querySelectorAll('.portfolio-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
-
-// Counter animation for statistics
+// Counter animation
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
@@ -163,34 +163,27 @@ function animateCounter(element, target, duration = 2000) {
     updateCounter();
 }
 
-// Intersection Observer for counter animation
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
-
+// Intersection Observer for counters
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('[data-counter]');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-counter'));
-                animateCounter(counter, target);
-            });
-            observer.unobserve(entry.target);
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-target'));
+            animateCounter(counter, target);
+            observer.unobserve(counter);
         }
     });
-}, observerOptions);
+}, { threshold: 0.5 });
 
 // Observe elements with counters
-document.querySelectorAll('.counter-section').forEach(section => {
-    observer.observe(section);
+document.querySelectorAll('[data-target]').forEach(counter => {
+    observer.observe(counter);
 });
 
 // Parallax effect for hero section
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
-    const heroSection = document.querySelector('.hero-section');
+    const heroSection = document.querySelector('#home');
     
     if (heroSection) {
         const rate = scrolled * -0.5;
@@ -216,7 +209,7 @@ function typeWriter(element, text, speed = 100) {
 
 // Initialize typing animation when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    const heroTitle = document.querySelector('.hero-title');
+    const heroTitle = document.querySelector('#home h1');
     if (heroTitle) {
         const originalText = heroTitle.textContent;
         setTimeout(() => {
@@ -225,62 +218,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Lazy loading for images
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-});
-
 // Back to top button
 function createBackToTopButton() {
-    const button = document.createElement('button');
-    button.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    button.className = 'back-to-top';
-    button.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--gradient-primary);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    `;
+    const backToTop = document.createElement('button');
+    backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    backToTop.className = 'fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-dark transform hover:scale-110 transition-all duration-200 opacity-0 pointer-events-none z-40';
+    backToTop.id = 'back-to-top';
     
-    document.body.appendChild(button);
+    document.body.appendChild(backToTop);
     
-    // Show/hide button based on scroll position
+    // Show/hide based on scroll position
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
-            button.style.opacity = '1';
-            button.style.visibility = 'visible';
+            backToTop.classList.remove('opacity-0', 'pointer-events-none');
         } else {
-            button.style.opacity = '0';
-            button.style.visibility = 'hidden';
+            backToTop.classList.add('opacity-0', 'pointer-events-none');
         }
     });
     
-    // Scroll to top when clicked
-    button.addEventListener('click', function() {
+    // Scroll to top on click
+    backToTop.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -291,65 +248,58 @@ function createBackToTopButton() {
 // Initialize back to top button
 createBackToTopButton();
 
-// Preloader
-window.addEventListener('load', function() {
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
+// Ensure footer visibility
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('footer');
+    if (footer) {
+        // Force footer to be visible
+        footer.style.display = 'block';
+        footer.style.visibility = 'visible';
+        footer.style.opacity = '1';
+        footer.style.position = 'relative';
+        footer.style.zIndex = '10';
+        
+        console.log('Footer element found and made visible');
+        console.log('Footer computed styles:', window.getComputedStyle(footer));
+        console.log('Footer offsetHeight:', footer.offsetHeight);
+        console.log('Footer clientHeight:', footer.clientHeight);
+    } else {
+        console.log('Footer element not found');
     }
+    
+    // Check body structure
+    const body = document.body;
+    console.log('Body height:', body.offsetHeight);
+    console.log('Window height:', window.innerHeight);
+    console.log('Document height:', document.documentElement.scrollHeight);
 });
 
 // Form validation
 function validateForm(form) {
-    const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
     let isValid = true;
     
     inputs.forEach(input => {
         if (!input.value.trim()) {
+            input.classList.add('border-red-500');
             isValid = false;
-            input.classList.add('is-invalid');
         } else {
-            input.classList.remove('is-invalid');
+            input.classList.remove('border-red-500');
         }
     });
     
     return isValid;
 }
 
-// Add form validation to all forms
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        if (!validateForm(this)) {
-            e.preventDefault();
-            showNotification('Please fill in all required fields.', 'error');
-        }
-    });
+// Add form validation to contact form
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('form[action="process.php"]');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            if (!validateForm(this)) {
+                e.preventDefault();
+                showNotification('Please fill in all required fields.', 'error');
+            }
+        });
+    }
 });
-
-// Add CSS for form validation
-const style = document.createElement('style');
-style.textContent = `
-    .is-invalid {
-        border-color: #dc3545 !important;
-        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
-    }
-    
-    .notification-content {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .notification-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        margin-left: auto;
-    }
-`;
-document.head.appendChild(style); 
