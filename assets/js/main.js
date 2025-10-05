@@ -252,7 +252,7 @@ function showNotificationEnhanced(message, type = 'info') {
     const iconClass = type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
     const bgClass = type === 'success' ? 'bg-gradient-to-r from-green-500 to-green-600' : 
                    type === 'error' ? 'bg-gradient-to-r from-red-500 to-red-600' : 
-                   'bg-gradient-to-r from-blue-500 to-blue-600';
+                   'bg-gradient-to-r from-orange-500 to-orange-600';
     
     notification.className = `fixed top-4 right-4 z-50 p-6 rounded-xl shadow-2xl transform translate-x-full transition-all duration-500 ${bgClass} text-white backdrop-blur-sm border border-white/20`;
     
@@ -403,6 +403,13 @@ function createBackToTopButton() {
 // Initialize back to top button
 createBackToTopButton();
 
+    // Initialize results box immediately
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            animateResultsBox();
+        }, 200); // Show results box after 0.2 seconds
+    });
+
 // Enhanced section interactions
 document.addEventListener('DOMContentLoaded', function() {
     // Add testimonial card effects
@@ -417,13 +424,10 @@ document.addEventListener('DOMContentLoaded', function() {
         member.classList.add('team-member-card');
     });
     
-    // Add pricing card effects
-    const pricingCards = document.querySelectorAll('.bg-white.rounded-2xl.p-8.shadow-lg');
-    pricingCards.forEach((card, index) => {
-        card.classList.add('pricing-card');
-        if (index === 1) { // Professional plan
-            card.classList.add('popular');
-        }
+    // Add service card effects
+    const serviceCards = document.querySelectorAll('.bg-white.rounded-2xl.p-8.shadow-lg');
+    serviceCards.forEach((card, index) => {
+        card.classList.add('service-card');
     });
     
     // Add statistics section class
@@ -432,13 +436,13 @@ document.addEventListener('DOMContentLoaded', function() {
         statsSection.classList.add('statistics-section');
     }
     
-    // Enhanced pricing plan interactions
-    const pricingButtons = document.querySelectorAll('.pricing-card button');
-    pricingButtons.forEach(button => {
+    // Enhanced service card interactions
+    const serviceButtons = document.querySelectorAll('.service-card button');
+    serviceButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            const planName = this.closest('.pricing-card').querySelector('h3').textContent;
-            showNotificationEnhanced(`Thank you for your interest in the ${planName} plan! We'll contact you within 24 hours.`, 'success');
+            const serviceName = this.closest('.service-card').querySelector('h3').textContent;
+            showNotificationEnhanced(`Thank you for your interest in our ${serviceName} service! We'll contact you within 24 hours.`, 'success');
         });
     });
     
@@ -599,7 +603,7 @@ function showNotificationEnhanced(message, type = 'info') {
     const iconClass = type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
     const bgClass = type === 'success' ? 'bg-gradient-to-r from-green-500 to-green-600' : 
                    type === 'error' ? 'bg-gradient-to-r from-red-500 to-red-600' : 
-                   'bg-gradient-to-r from-blue-500 to-blue-600';
+                   'bg-gradient-to-r from-orange-500 to-orange-600';
     
     const notification = document.createElement('div');
     notification.className = `fixed top-4 right-4 z-50 p-6 rounded-xl shadow-2xl transform translate-x-full transition-all duration-500 ${bgClass} text-white backdrop-blur-sm border border-white/20`;
@@ -680,4 +684,192 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+// Toggle Switch Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleSwitches = document.querySelectorAll('.toggle-switch');
+    let animationStarted = false;
+    
+    // Create intersection observer for hero section
+    const heroSection = document.querySelector('#home');
+    if (heroSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animationStarted) {
+                    animationStarted = true;
+                    startToggleAnimation();
+                }
+            });
+        }, { 
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        observer.observe(heroSection);
+    }
+
+    // Start toggle animation when hero section comes into view
+    function startToggleAnimation() {
+        const services = ['meta', 'google', 'website', 'traffiqon'];
+        services.forEach((service, index) => {
+            setTimeout(() => {
+                activateToggle(service);
+            }, (index + 1) * 600); // Reduced delay
+        });
+        
+        // Animate results box immediately
+        setTimeout(() => {
+            animateResultsBox();
+        }, 500); // Show after 0.5 seconds
+    }
+    
+    // Animate results box
+    function animateResultsBox() {
+        const resultsBox = document.querySelector('.results-box');
+        if (resultsBox) {
+            resultsBox.classList.add('animate');
+            
+            // Animate traffic bars
+            const trafficBars = [
+                { element: resultsBox.querySelector('.traffic-bar-1'), height: '20%', delay: 100 },
+                { element: resultsBox.querySelector('.traffic-bar-2'), height: '35%', delay: 200 },
+                { element: resultsBox.querySelector('.traffic-bar-3'), height: '50%', delay: 300 },
+                { element: resultsBox.querySelector('.traffic-bar-4'), height: '70%', delay: 400 },
+                { element: resultsBox.querySelector('.traffic-bar-5'), height: '85%', delay: 500 },
+                { element: resultsBox.querySelector('.traffic-bar-6'), height: '100%', delay: 600 }
+            ];
+            
+            trafficBars.forEach(bar => {
+                setTimeout(() => {
+                    if (bar.element) {
+                        bar.element.style.height = bar.height;
+                        bar.element.style.transition = 'height 0.8s ease-out';
+                    }
+                }, bar.delay);
+            });
+            
+            // Animate sales bars
+            const salesBars = [
+                { element: resultsBox.querySelector('.sales-bar-1'), height: '25%', delay: 150 },
+                { element: resultsBox.querySelector('.sales-bar-2'), height: '40%', delay: 250 },
+                { element: resultsBox.querySelector('.sales-bar-3'), height: '55%', delay: 350 },
+                { element: resultsBox.querySelector('.sales-bar-4'), height: '75%', delay: 450 },
+                { element: resultsBox.querySelector('.sales-bar-5'), height: '90%', delay: 550 },
+                { element: resultsBox.querySelector('.sales-bar-6'), height: '100%', delay: 650 }
+            ];
+            
+            salesBars.forEach(bar => {
+                setTimeout(() => {
+                    if (bar.element) {
+                        bar.element.style.height = bar.height;
+                        bar.element.style.transition = 'height 0.8s ease-out';
+                    }
+                }, bar.delay);
+            });
+        }
+    }
+
+    // Activate individual toggle
+    function activateToggle(service) {
+        const toggleSwitch = document.querySelector(`[data-service="${service}"]`);
+        if (!toggleSwitch) return;
+
+        const track = toggleSwitch.querySelector('.toggle-track');
+        const thumb = toggleSwitch.querySelector('.toggle-thumb');
+        const label = toggleSwitch.querySelector('.toggle-label');
+        
+        // Add active classes
+        track.classList.add('active');
+        thumb.classList.add('active');
+        label.classList.add('active');
+        label.textContent = 'ON';
+        
+        
+        // Create particle effect for TraffiqOn
+        if (service === 'traffiqon') {
+            createParticleEffect(toggleSwitch);
+        }
+    }
+
+    // Create particle effect for TraffiqOn activation
+    function createParticleEffect(container) {
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        // Create multiple particles
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => {
+                createParticle(centerX, centerY);
+            }, i * 50);
+        }
+    }
+
+    function createParticle(x, y) {
+        const particle = document.createElement('div');
+        particle.style.position = 'fixed';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.width = '4px';
+        particle.style.height = '4px';
+        particle.style.background = 'linear-gradient(45deg, #10b981, #06b6d4)';
+        particle.style.borderRadius = '50%';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '9999';
+        particle.style.opacity = '1';
+        
+        document.body.appendChild(particle);
+        
+        // Animate particle
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 50 + Math.random() * 100;
+        const vx = Math.cos(angle) * velocity;
+        const vy = Math.sin(angle) * velocity;
+        
+        let posX = x;
+        let posY = y;
+        let opacity = 1;
+        
+        const animate = () => {
+            posX += vx * 0.02;
+            posY += vy * 0.02;
+            opacity -= 0.02;
+            
+            particle.style.left = posX + 'px';
+            particle.style.top = posY + 'px';
+            particle.style.opacity = opacity;
+            
+            if (opacity > 0) {
+                requestAnimationFrame(animate);
+            } else {
+                particle.remove();
+            }
+        };
+        
+        requestAnimationFrame(animate);
+    }
+
+    // Manual toggle functionality (optional)
+    toggleSwitches.forEach(toggleSwitch => {
+        const track = toggleSwitch.querySelector('.toggle-track');
+        const thumb = toggleSwitch.querySelector('.toggle-thumb');
+        const label = toggleSwitch.querySelector('.toggle-label');
+        
+        track.addEventListener('click', function() {
+            const isActive = track.classList.contains('active');
+            
+            if (isActive) {
+                track.classList.remove('active');
+                thumb.classList.remove('active');
+                label.classList.remove('active');
+                label.textContent = 'OFF';
+            } else {
+                track.classList.add('active');
+                thumb.classList.add('active');
+                label.classList.add('active');
+                label.textContent = 'ON';
+            }
+        });
+    });
 });
