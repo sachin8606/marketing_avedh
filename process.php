@@ -59,7 +59,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
 // Prepare email content
 $to = 'hello@marketingavedh.com'; // Change this to your email
-$subject = 'New Contact Form Submission - Marketing Avedh';
+$subject = 'New Contact Form Submission - Traffiqon';
 
 $emailBody = "
 <html>
@@ -79,7 +79,7 @@ $emailBody = "
     <div class='container'>
         <div class='header'>
             <h2>New Contact Form Submission</h2>
-            <p>Marketing Avedh Website</p>
+            <p>Traffiqon Website</p>
         </div>
         <div class='content'>
             <div class='field'>
@@ -103,7 +103,7 @@ $emailBody = "
                 <div class='value'>$message</div>
             </div>
             <div class='footer'>
-                <p>This message was sent from the Marketing Avedh contact form on " . date('Y-m-d H:i:s') . "</p>
+                <p>This message was sent from the Traffiqon contact form on " . date('Y-m-d H:i:s') . "</p>
                 <p>IP Address: " . $_SERVER['REMOTE_ADDR'] . "</p>
             </div>
         </div>
@@ -116,7 +116,7 @@ $emailBody = "
 $headers = [
     'MIME-Version: 1.0',
     'Content-type: text/html; charset=UTF-8',
-    'From: Marketing Avedh Website <noreply@marketingavedh.com>',
+    'From: Traffiqon Website <noreply@marketingavedh.com>',
     'Reply-To: ' . $email,
     'X-Mailer: PHP/' . phpversion()
 ];
@@ -143,7 +143,7 @@ if ($mailSent) {
 
 // Function to send notification email to customer (optional)
 function sendCustomerNotification($customerEmail, $customerName) {
-    $subject = 'Thank you for contacting Marketing Avedh';
+    $subject = 'Thank you for contacting Traffiqon';
     
     $customerEmailBody = "
     <html>
@@ -163,12 +163,12 @@ function sendCustomerNotification($customerEmail, $customerName) {
             </div>
             <div class='content'>
                 <p>Dear $customerName,</p>
-                <p>Thank you for reaching out to Marketing Avedh. We have received your message and will review it carefully.</p>
+                <p>Thank you for reaching out to Traffiqon. We have received your message and will review it carefully.</p>
                 <p>Our team will get back to you within 24-48 hours with a detailed response and next steps.</p>
                 <p>In the meantime, feel free to explore our services and case studies on our website.</p>
-                <p>Best regards,<br>The Marketing Avedh Team</p>
+                <p>Best regards,<br>The Traffiqon Team</p>
                 <div class='footer'>
-                    <p>Marketing Avedh<br>Premium Digital Marketing Agency</p>
+                    <p>Traffiqon<br>Premium Digital Marketing Agency</p>
                 </div>
             </div>
         </div>
@@ -179,7 +179,7 @@ function sendCustomerNotification($customerEmail, $customerName) {
     $headers = [
         'MIME-Version: 1.0',
         'Content-type: text/html; charset=UTF-8',
-        'From: Marketing Avedh <hello@marketingavedh.com>',
+        'From: Traffiqon <hello@marketingavedh.com>',
         'X-Mailer: PHP/' . phpversion()
     ];
     

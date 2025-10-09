@@ -711,7 +711,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start toggle animation when hero section comes into view
     function startToggleAnimation() {
-        const services = ['meta', 'google', 'website', 'traffiqon'];
+        const services = ['meta', 'google', 'website'];
         services.forEach((service, index) => {
             setTimeout(() => {
                 activateToggle(service);
@@ -786,13 +786,10 @@ document.addEventListener('DOMContentLoaded', function() {
         label.textContent = 'ON';
         
         
-        // Create particle effect for TraffiqOn
-        if (service === 'traffiqon') {
-            createParticleEffect(toggleSwitch);
-        }
+        // Particle effects can be added for any service if needed
     }
 
-    // Create particle effect for TraffiqOn activation
+    // Create particle effect for service activation
     function createParticleEffect(container) {
         const rect = container.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;

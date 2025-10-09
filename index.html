@@ -75,38 +75,119 @@
 </head>
 <body class="font-inter text-gray-800" style="min-height: 100vh; display: flex; flex-direction: column;">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200 navbar-1">
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center group">
-                        <div class="w-10 h-10 bg-gradient-mixed rounded-xl flex items-center justify-center mr-3 group-hover:scale-105 transition-all duration-300 shadow-md">
-                            <span class="text-white font-bold text-lg">T</span>
-                        </div>
-                        <span class="text-gray-900 font-space font-bold text-lg">TraffiqOn</span>
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/logo.svg" alt="Traffiqon Logo" class="h-10 w-auto">
+                        <span class="ml-3 text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Traffiqon</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex lg:items-center lg:space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                    <a href="index.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
                         Home
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
                     </a>
-                    <a href="#services" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
-                        Services
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
-                    </a>
-                    <a href="#about" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2 flex items-center">
+                            Services
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
+                            <!-- Dropdown Header -->
+                            <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-t-xl">
+                                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Our Services</h3>
+                                <p class="text-xs text-gray-600 mt-1">Choose your marketing solution</p>
+                            </div>
+                            
+                            <!-- Dropdown Items -->
+                            <div class="py-3">
+                                <a href="services.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:text-emerald-700 transition-all duration-200 border-l-4 border-transparent hover:border-emerald-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fas fa-th-large text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">All Services</div>
+                                            <div class="text-xs text-gray-500">Complete marketing suite</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="meta-ads.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all duration-200 border-l-4 border-transparent hover:border-blue-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fab fa-facebook text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Meta Ads</div>
+                                            <div class="text-xs text-gray-500">Facebook & Instagram</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="google-ads.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-200 border-l-4 border-transparent hover:border-red-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fab fa-google text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Google Ads</div>
+                                            <div class="text-xs text-gray-500">Search & Display</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="youtube-ads.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-200 border-l-4 border-transparent hover:border-red-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fab fa-youtube text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">YouTube Ads</div>
+                                            <div class="text-xs text-gray-500">Video advertising</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="website-development.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 hover:text-purple-700 transition-all duration-200 border-l-4 border-transparent hover:border-purple-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fas fa-code text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Website Development</div>
+                                            <div class="text-xs text-gray-500">Custom web solutions</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Dropdown Footer -->
+                            <div class="px-6 py-3 border-t border-gray-100 bg-gray-50 rounded-b-xl">
+                                <a href="contact.html" class="block w-full text-center bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-2 px-4 rounded-lg text-sm font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-200">
+                                    Get Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
                         About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
                     </a>
-                    <a href="#portfolio" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                    <a href="portfolio.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
                         Portfolio
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
                     </a>
-                    <a href="#contact" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                    <a href="contact.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
                         Contact
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
                     </a>
@@ -342,141 +423,66 @@
     </section>
 
 
-    <!-- Services Section -->
+    <!-- Brief Services Overview -->
     <section id="services" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Our Core Services</h6>
+                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Our Services</h6>
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Premium Digital Marketing Solutions</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive digital marketing services designed to drive growth and maximize ROI</p>
             </div>
             
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Meta Ads -->
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-blue-500/20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-facebook text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">Meta Ads</h3>
+                    <p class="text-gray-600 mb-6">Facebook & Instagram advertising campaigns that drive targeted traffic and conversions.</p>
+                    <a href="meta-ads.html" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-200">Learn More →</a>
+                </div>
+                
+                <!-- Google Ads -->
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-red-500/20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-google text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-300">Google Ads</h3>
+                    <p class="text-gray-600 mb-6">Search and display advertising on the world's largest search platform.</p>
+                    <a href="google-ads.html" class="text-red-600 font-semibold hover:text-red-700 transition-colors duration-200">Learn More →</a>
+                </div>
+                
+                <!-- YouTube Ads -->
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-red-500/20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-youtube text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-300">YouTube Ads</h3>
+                    <p class="text-gray-600 mb-6">Video advertising that converts viewers into customers.</p>
+                    <a href="youtube-ads.html" class="text-red-600 font-semibold hover:text-red-700 transition-colors duration-200">Learn More →</a>
+                </div>
+                
+                <!-- Website Development -->
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-purple-500/20" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">Website Development</h3>
+                    <p class="text-gray-600 mb-6">Custom websites that convert visitors into customers.</p>
+                    <a href="website-development.html" class="text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-200">Learn More →</a>
+                </div>
+            </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- SEO Service -->
-                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-primary/20" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-search text-white text-2xl"></i>
-                        </div>
-                        <div class="absolute top-0 right-0 w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i class="fas fa-arrow-right text-white text-sm"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-300">Search Engine Optimization</h3>
-                    <p class="text-gray-600 mb-6">Comprehensive SEO strategies to improve your website's visibility and drive organic traffic from search engines.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            On-page & Off-page SEO
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Technical SEO Optimization
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Local SEO Services
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            SEO Analytics & Reporting
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- PPC Service -->
-                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-secondary/20" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-gradient-to-r from-secondary to-orange-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-ad text-white text-2xl"></i>
-                        </div>
-                        <div class="absolute top-0 right-0 w-8 h-8 bg-gradient-to-r from-secondary to-orange-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i class="fas fa-arrow-right text-white text-sm"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-secondary transition-colors duration-300">Pay-Per-Click Advertising</h3>
-                    <p class="text-gray-600 mb-6">Strategic PPC campaigns that drive targeted traffic and maximize your advertising budget with measurable results.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Google Ads Management
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Facebook & Instagram Ads
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Remarketing Campaigns
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Conversion Optimization
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Social Media Service -->
-                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-accent/20" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-gradient-to-r from-accent to-green-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-share-alt text-white text-2xl"></i>
-                        </div>
-                        <div class="absolute top-0 right-0 w-8 h-8 bg-gradient-to-r from-accent to-green-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i class="fas fa-arrow-right text-white text-sm"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-accent transition-colors duration-300">Social Media Marketing</h3>
-                    <p class="text-gray-600 mb-6">Engaging social media strategies that build brand awareness and foster meaningful connections with your audience.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Content Strategy & Creation
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Community Management
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Influencer Partnerships
-                        </li>
-                        <li class="flex items-center text-gray-600 group-hover:text-gray-700 transition-colors duration-200">
-                            <div class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-accent/30 transition-colors duration-200">
-                                <i class="fas fa-check text-accent text-xs"></i>
-                            </div>
-                            Performance Analytics
-                        </li>
-                    </ul>
-                </div>
+            <div class="text-center mt-12">
+                <a href="services.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                    View All Services
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Brief About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -500,6 +506,11 @@
                             <span class="text-lg text-gray-700">Proven Results</span>
                         </div>
                     </div>
+                    <div class="mt-8">
+                        <a href="about.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                            Learn More About Us
+                        </a>
+                    </div>
                 </div>
                 <div data-aos="fade-left" class="text-center">
                     <img src="assets/images/1536748_4541.png" alt="Digital Marketing Innovation" class="w-full max-w-lg mx-auto rounded-3xl transform hover:scale-105 transition-transform duration-300">
@@ -508,379 +519,8 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Our Work</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Success Stories</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover how we've helped businesses achieve remarkable growth through strategic digital marketing</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
-                        <img src="https://via.placeholder.com/400x300/6366f1/ffffff?text=E-commerce+Success" alt="E-commerce Success" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div class="p-6 text-white">
-                            <h3 class="text-xl font-bold mb-2">E-commerce Success</h3>
-                            <p class="text-white/90">300% increase in online sales through comprehensive digital marketing strategy</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 2 -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
-                        <img src="https://via.placeholder.com/400x300/f59e0b/ffffff?text=Local+Business+Growth" alt="Local Business Growth" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div class="p-6 text-white">
-                            <h3 class="text-xl font-bold mb-2">Local Business Growth</h3>
-                            <p class="text-white/90">500% increase in local search visibility and customer inquiries</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 3 -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
-                        <img src="https://via.placeholder.com/400x300/10b981/ffffff?text=SaaS+Marketing" alt="SaaS Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div class="p-6 text-white">
-                            <h3 class="text-xl font-bold mb-2">SaaS Marketing</h3>
-                            <p class="text-white/90">200% increase in qualified leads through targeted PPC campaigns</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Client Success</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real results from real businesses we've helped grow</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-6">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic">"Marketing Avedh transformed our online presence completely. Our organic traffic increased by 300% in just 6 months!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">JD</div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">John Davis</h4>
-                            <p class="text-gray-500 text-sm">CEO, TechStart Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-6">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic">"The PPC campaigns they created for us generated 500% ROI. Absolutely outstanding results!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-r from-secondary to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">SM</div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Sarah Miller</h4>
-                            <p class="text-gray-500 text-sm">Marketing Director, E-commerce Pro</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center mb-6">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic">"Professional, responsive, and results-driven. They exceeded all our expectations!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-r from-accent to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">RJ</div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Robert Johnson</h4>
-                            <p class="text-gray-500 text-sm">Founder, Growth Ventures</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Our Team</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Meet the Experts</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Dedicated professionals committed to your success</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative mb-6">
-                        <div class="w-32 h-32 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full mx-auto flex items-center justify-center text-white text-4xl font-bold group-hover:scale-110 transition-transform duration-300">AM</div>
-                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <i class="fas fa-crown text-white text-sm"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Alex Morgan</h3>
-                    <p class="text-emerald-600 font-semibold mb-2">CEO & Founder</p>
-                    <p class="text-gray-600 text-sm">10+ years in digital marketing</p>
-                </div>
-                
-                <!-- Team Member 2 -->
-                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative mb-6">
-                        <div class="w-32 h-32 bg-gradient-to-r from-secondary to-orange-500 rounded-full mx-auto flex items-center justify-center text-white text-4xl font-bold group-hover:scale-110 transition-transform duration-300">LS</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Lisa Smith</h3>
-                    <p class="text-secondary font-semibold mb-2">SEO Specialist</p>
-                    <p class="text-gray-600 text-sm">Expert in technical SEO</p>
-                </div>
-                
-                <!-- Team Member 3 -->
-                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative mb-6">
-                        <div class="w-32 h-32 bg-gradient-to-r from-accent to-green-600 rounded-full mx-auto flex items-center justify-center text-white text-4xl font-bold group-hover:scale-110 transition-transform duration-300">MJ</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Mike Johnson</h3>
-                    <p class="text-accent font-semibold mb-2">PPC Manager</p>
-                    <p class="text-gray-600 text-sm">Google Ads certified expert</p>
-                </div>
-                
-                <!-- Team Member 4 -->
-                <div class="text-center group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative mb-6">
-                        <div class="w-32 h-32 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full mx-auto flex items-center justify-center text-white text-4xl font-bold group-hover:scale-110 transition-transform duration-300">EW</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Emma Wilson</h3>
-                    <p class="text-emerald-600 font-semibold mb-2">Social Media Manager</p>
-                    <p class="text-gray-600 text-sm">Creative content strategist</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advertising Platforms Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Advertising Platforms</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">We Master Every Platform</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Expert advertising across all major platforms to maximize your reach and ROI</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- YouTube Ads -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fab fa-youtube text-white text-3xl"></i>
-                    </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">YouTube Ads</h3>
-                        <p class="text-gray-600">Video advertising that converts viewers into customers</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">TrueView Video Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Bumper Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Display Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Shopping Ads</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Google Ads -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fab fa-google text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Google Ads</h3>
-                        <p class="text-gray-600">Search and display advertising on the world's largest platform</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Search Campaigns</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Display Network</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Shopping Campaigns</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">App Campaigns</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Instagram Ads -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fab fa-instagram text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Instagram Ads</h3>
-                        <p class="text-gray-600">Visual storytelling that drives engagement and sales</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Feed Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Stories Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Reels Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Shopping Ads</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Facebook Ads -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fab fa-facebook text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Facebook Ads</h3>
-                        <p class="text-gray-600">Targeted advertising to reach your ideal audience</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">News Feed Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Stories Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Video Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Carousel Ads</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Website Development -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200" data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-code text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Website Development</h3>
-                        <p class="text-gray-600">Custom websites that convert visitors into customers</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Responsive Design</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">E-commerce Solutions</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">CMS Integration</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Performance Optimization</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- LinkedIn Ads -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200" data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fab fa-linkedin text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">LinkedIn Ads</h3>
-                        <p class="text-gray-600">Professional B2B advertising for business growth</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Sponsored Content</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Message Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Dynamic Ads</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-emerald-600 mr-3"></i>
-                            <span class="text-gray-700">Lead Gen Forms</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Get In Touch</h6>
@@ -888,37 +528,38 @@
                 <p class="text-xl text-gray-600">Let's discuss how we can help you achieve your digital marketing goals</p>
             </div>
             
-            <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 contact-form-enhanced" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12" data-aos="fade-up" data-aos-delay="100">
                 <form action="process.php" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 form-input-enhanced">
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 form-input-enhanced">
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200">
                         </div>
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 form-input-enhanced">
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200">
                     </div>
                     <div>
                         <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
-                        <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 form-input-enhanced">
+                        <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200">
                             <option value="">Select a service</option>
+                            <option value="meta-ads">Meta Ads (Facebook & Instagram)</option>
+                            <option value="google-ads">Google Ads</option>
+                            <option value="youtube-ads">YouTube Ads</option>
+                            <option value="website-development">Website Development</option>
                             <option value="seo">Search Engine Optimization</option>
-                            <option value="ppc">Pay-Per-Click Advertising</option>
                             <option value="social">Social Media Marketing</option>
-                            <option value="content">Content Marketing</option>
-                            <option value="email">Email Marketing</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none form-input-enhanced"></textarea>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200 resize-none"></textarea>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
@@ -930,280 +571,6 @@
         </div>
     </section>
     </main>
-
-    <!-- Statistics Section -->
-    <section class="py-20 bg-gradient-to-r from-emerald-500 to-teal-600 text-white statistics-section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">Our Impact in Numbers</h2>
-                <p class="text-xl text-white/90 max-w-3xl mx-auto">Real results that speak for themselves</p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative">
-                        <div class="text-4xl lg:text-5xl font-bold mb-2 stat-counter" data-target="500">0</div>
-                        <div class="absolute inset-0 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-                    </div>
-                    <p class="text-white/80">Happy Clients</p>
-                </div>
-                <div class="text-center stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative">
-                        <div class="text-4xl lg:text-5xl font-bold mb-2 stat-counter" data-target="1000">0</div>
-                        <div class="absolute inset-0 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-                    </div>
-                    <p class="text-white/80">Projects Completed</p>
-                </div>
-                <div class="text-center stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative">
-                        <div class="text-4xl lg:text-5xl font-bold mb-2 stat-counter" data-target="98">0</div>
-                        <div class="absolute inset-0 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-                    </div>
-                    <p class="text-white/80">Success Rate (%)</p>
-                </div>
-                <div class="text-center stat-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative">
-                        <div class="text-4xl lg:text-5xl font-bold mb-2 stat-counter" data-target="5">0</div>
-                        <div class="absolute inset-0 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-                    </div>
-                    <p class="text-white/80">Years Experience</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Our Process</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">How We Drive Results</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A proven methodology that delivers consistent success</p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="text-center process-step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto process-number">1</div>
-                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <i class="fas fa-check text-white text-sm"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery & Analysis</h3>
-                    <p class="text-gray-600">We analyze your business, competitors, and market opportunities to create a strategic foundation.</p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="text-center process-step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-secondary to-orange-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto process-number">2</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Strategy Development</h3>
-                    <p class="text-gray-600">Custom marketing strategies tailored to your goals, audience, and industry requirements.</p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="text-center process-step" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-accent to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto process-number">3</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Implementation</h3>
-                    <p class="text-gray-600">Expert execution of campaigns with continuous optimization and performance monitoring.</p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="text-center process-step" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto process-number">4</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Results & Growth</h3>
-                    <p class="text-gray-600">Continuous improvement and scaling strategies to maximize ROI and business growth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Why Choose Us</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">What Sets Us Apart</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Unique advantages that make us the preferred choice for digital marketing</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mb-6 feature-icon">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Data-Driven Approach</h3>
-                    <p class="text-gray-600">Every decision is backed by comprehensive data analysis and market research.</p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-gradient-to-r from-secondary to-orange-500 rounded-full flex items-center justify-center mb-6 feature-icon">
-                        <i class="fas fa-users text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Expert Team</h3>
-                    <p class="text-gray-600">Certified professionals with years of experience in digital marketing.</p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-green-600 rounded-full flex items-center justify-center mb-6 feature-icon">
-                        <i class="fas fa-rocket text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast Results</h3>
-                    <p class="text-gray-600">Quick implementation and optimization for immediate impact on your business.</p>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mb-6 feature-icon">
-                        <i class="fas fa-headset text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">24/7 Support</h3>
-                    <p class="text-gray-600">Round-the-clock support and communication for all your marketing needs.</p>
-                </div>
-                
-                <!-- Feature 5 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 feature-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-6 feature-icon">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Transparent Reporting</h3>
-                    <p class="text-gray-600">Detailed reports and analytics to track your campaign performance.</p>
-                </div>
-                
-                <!-- Feature 6 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 feature-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mb-6 feature-icon">
-                        <i class="fas fa-trophy text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Proven Results</h3>
-                    <p class="text-gray-600">Track record of successful campaigns and satisfied clients across industries.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h6 class="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2">Latest Insights</h6>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Marketing Blog</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Stay updated with the latest trends and strategies in digital marketing</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative overflow-hidden rounded-t-2xl">
-                        <img src="https://via.placeholder.com/400x250/6366f1/ffffff?text=SEO+Trends" alt="SEO Trends" class="w-full h-48 object-cover blog-image">
-                        <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">SEO</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-gray-500 text-sm mb-3">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>March 15, 2024</span>
-                            <i class="fas fa-clock ml-4 mr-2"></i>
-                            <span>5 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Top SEO Trends for 2024</h3>
-                        <p class="text-gray-600 mb-4">Discover the latest SEO strategies that will dominate search rankings this year.</p>
-                        <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-600-dark transition-colors duration-200">Read More →</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 2 -->
-                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative overflow-hidden rounded-t-2xl">
-                        <img src="https://via.placeholder.com/400x250/f59e0b/ffffff?text=PPC+Strategies" alt="PPC Strategies" class="w-full h-48 object-cover blog-image">
-                        <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">PPC</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-gray-500 text-sm mb-3">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>March 12, 2024</span>
-                            <i class="fas fa-clock ml-4 mr-2"></i>
-                            <span>7 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Maximizing PPC ROI</h3>
-                        <p class="text-gray-600 mb-4">Learn advanced techniques to optimize your pay-per-click campaigns for maximum returns.</p>
-                        <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-600-dark transition-colors duration-200">Read More →</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 3 -->
-                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 blog-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden rounded-t-2xl">
-                        <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Social+Media" alt="Social Media" class="w-full h-48 object-cover blog-image">
-                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Social</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-gray-500 text-sm mb-3">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>March 10, 2024</span>
-                            <i class="fas fa-clock ml-4 mr-2"></i>
-                            <span>6 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Social Media Marketing Tips</h3>
-                        <p class="text-gray-600 mb-4">Essential strategies to boost your brand presence on social media platforms.</p>
-                        <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-600-dark transition-colors duration-200">Read More →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-emerald-500 via-teal-600 to-emerald-700 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="absolute inset-0">
-            <div class="absolute top-10 left-10 w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
-            <div class="absolute top-20 right-20 w-6 h-6 bg-white/10 rounded-full animate-bounce"></div>
-            <div class="absolute bottom-20 left-20 w-3 h-3 bg-white/30 rounded-full animate-ping"></div>
-            <div class="absolute bottom-10 right-10 w-5 h-5 bg-white/20 rounded-full animate-pulse"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div data-aos="fade-up">
-                <h2 class="text-4xl lg:text-6xl font-bold mb-6">Ready to Transform Your Business?</h2>
-                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                    Join hundreds of successful businesses that have grown with our proven digital marketing strategies.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#contact" class="group bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 relative overflow-hidden btn-enhanced">
-                        <span class="relative z-10">Start Your Free Audit</span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-gray-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                    </a>
-                    <a href="#contact" class="group border-2 border-white/80 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-200 relative overflow-hidden">
-                        <span class="relative z-10">Schedule a Call</span>
-                        <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                    </a>
-                </div>
-                <div class="mt-8 flex items-center justify-center space-x-8 text-white/70">
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-accent mr-2"></i>
-                        <span>Free Consultation</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-accent mr-2"></i>
-                        <span>No Setup Fees</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-accent mr-2"></i>
-                        <span>30-Day Guarantee</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="text-white py-16 footer-enhanced" style="display: block !important; visibility: visible !important; opacity: 1 !important; position: relative !important; z-index: 10 !important;">

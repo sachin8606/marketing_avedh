@@ -1,4 +1,4 @@
-# Marketing Avedh - Premium Digital Marketing Website
+# Traffiqon - Premium Digital Marketing Website
 
 A modern, responsive website for a premium digital marketing agency built with HTML, CSS, JavaScript, and PHP. This website features a professional design with international appeal, smooth animations, and comprehensive functionality.
 
@@ -244,7 +244,7 @@ For technical support or customization requests:
 
 ## 📄 License
 
-This website template is created for Marketing Avedh. Customize and use according to your needs.
+This website template is created for Traffiqon. Customize and use according to your needs.
 
 ---
 

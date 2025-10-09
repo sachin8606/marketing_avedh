@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Traffiqon | Digital Marketing Solutions</title>
+    <meta name="description" content="Discover Traffiqon's comprehensive digital marketing services including Meta Ads, Google Ads, YouTube Ads, and Website Development. Expert solutions for your business growth.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/logo.svg" alt="Traffiqon Logo" class="h-10 w-auto">
+                        <span class="ml-3 text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Traffiqon</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex lg:items-center lg:space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                    </a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2 flex items-center">
+                            Services
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
+                            <!-- Dropdown Header -->
+                            <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-t-xl">
+                                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Our Services</h3>
+                                <p class="text-xs text-gray-600 mt-1">Choose your marketing solution</p>
+                            </div>
+                            
+                            <!-- Dropdown Items -->
+                            <div class="py-3">
+                                <a href="services.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:text-emerald-700 transition-all duration-200 border-l-4 border-transparent hover:border-emerald-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fas fa-th-large text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">All Services</div>
+                                            <div class="text-xs text-gray-500">Complete marketing suite</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="meta-ads.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all duration-200 border-l-4 border-transparent hover:border-blue-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fab fa-facebook text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Meta Ads</div>
+                                            <div class="text-xs text-gray-500">Facebook & Instagram</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="google-ads.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-200 border-l-4 border-transparent hover:border-red-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fab fa-google text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Google Ads</div>
+                                            <div class="text-xs text-gray-500">Search & Display</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="youtube-ads.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-200 border-l-4 border-transparent hover:border-red-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fab fa-youtube text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">YouTube Ads</div>
+                                            <div class="text-xs text-gray-500">Video advertising</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="website-development.html" class="group/item block px-6 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 hover:text-purple-700 transition-all duration-200 border-l-4 border-transparent hover:border-purple-500">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 group-hover/item:scale-110 transition-transform duration-200">
+                                            <i class="fas fa-code text-white text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-sm">Website Development</div>
+                                            <div class="text-xs text-gray-500">Custom web solutions</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Dropdown Footer -->
+                            <div class="px-6 py-3 border-t border-gray-100 bg-gray-50 rounded-b-xl">
+                                <a href="contact.html" class="block w-full text-center bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-2 px-4 rounded-lg text-sm font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-200">
+                                    Get Free Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                    </a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                        Portfolio
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-emerald-600 font-medium transition-all duration-300 relative group px-3 py-2">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                    </a>
+                    <a href="#contact" class="bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-emerald-700 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                        <span class="flex items-center">
+                            <i class="fas fa-rocket mr-2 text-sm"></i>
+                            Get Free Audit
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none focus:text-emerald-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="index.html" class="text-gray-900 hover:text-emerald-600 block px-3 py-2 text-base font-semibold">Home</a>
+                    
+                    <!-- Mobile Services Submenu -->
+                    <div class="px-3 py-2">
+                        <div class="text-gray-600 text-base font-semibold mb-3 flex items-center">
+                            <i class="fas fa-th-large mr-2 text-emerald-600"></i>
+                            Services
+                        </div>
+                        <div class="pl-4 space-y-2">
+                            <a href="services.html" class="flex items-center text-gray-500 hover:text-emerald-600 px-3 py-2 rounded-lg hover:bg-emerald-50 transition-all duration-200">
+                                <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-th-large text-white text-xs"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">All Services</div>
+                                    <div class="text-xs text-gray-400">Complete suite</div>
+                                </div>
+                            </a>
+                            <a href="meta-ads.html" class="flex items-center text-gray-500 hover:text-blue-600 px-3 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200">
+                                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fab fa-facebook text-white text-xs"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">Meta Ads</div>
+                                    <div class="text-xs text-gray-400">Facebook & Instagram</div>
+                                </div>
+                            </a>
+                            <a href="google-ads.html" class="flex items-center text-gray-500 hover:text-red-600 px-3 py-2 rounded-lg hover:bg-red-50 transition-all duration-200">
+                                <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fab fa-google text-white text-xs"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">Google Ads</div>
+                                    <div class="text-xs text-gray-400">Search & Display</div>
+                                </div>
+                            </a>
+                            <a href="youtube-ads.html" class="flex items-center text-gray-500 hover:text-red-600 px-3 py-2 rounded-lg hover:bg-red-50 transition-all duration-200">
+                                <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fab fa-youtube text-white text-xs"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">YouTube Ads</div>
+                                    <div class="text-xs text-gray-400">Video advertising</div>
+                                </div>
+                            </a>
+                            <a href="website-development.html" class="flex items-center text-gray-500 hover:text-purple-600 px-3 py-2 rounded-lg hover:bg-purple-50 transition-all duration-200">
+                                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-code text-white text-xs"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm">Website Development</div>
+                                    <div class="text-xs text-gray-400">Custom web solutions</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="text-gray-600 hover:text-emerald-600 block px-3 py-2 text-base font-semibold">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-emerald-600 block px-3 py-2 text-base font-semibold">Portfolio</a>
+                    <a href="contact.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white block px-3 py-2 text-base font-semibold rounded-lg mx-3 mt-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-32 bg-gradient-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-blue-500/5"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2310b981" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full text-white text-sm font-semibold mb-8 shadow-lg">
+                    <i class="fas fa-th-large mr-3"></i>
+                    Our Services
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                    Complete Digital
+                    <span class="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Marketing Solutions</span>
+                </h1>
+                <p class="text-xl text-gray-700 mb-10 leading-relaxed max-w-3xl mx-auto font-medium">
+                    From Meta Ads to Website Development, we provide comprehensive digital marketing services that drive real results for your business growth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Left Side - Services Overview -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Digital Marketing Services</h2>
+                    <p class="text-gray-600 mb-8">We offer comprehensive digital marketing solutions to help your business grow and succeed in the digital landscape.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fab fa-facebook text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Meta Ads</h3>
+                                <p class="text-gray-600 mb-3">Facebook and Instagram advertising campaigns that reach your target audience and drive conversions.</p>
+                                <a href="meta-ads.html" class="text-blue-600 hover:text-blue-700 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fab fa-google text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Google Ads</h3>
+                                <p class="text-gray-600 mb-3">Search and display advertising on Google's network to capture high-intent customers.</p>
+                                <a href="google-ads.html" class="text-red-600 hover:text-red-700 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fab fa-youtube text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">YouTube Ads</h3>
+                                <p class="text-gray-600 mb-3">Video advertising on YouTube to engage audiences and build brand awareness.</p>
+                                <a href="youtube-ads.html" class="text-red-600 hover:text-red-700 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-code text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Website Development</h3>
+                                <p class="text-gray-600 mb-3">Custom websites and web applications built with modern technologies and best practices.</p>
+                                <a href="website-development.html" class="text-purple-600 hover:text-purple-700 font-medium">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Why Choose Us -->
+                <div data-aos="fade-left" class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose Traffiqon?</h2>
+                        <p class="text-gray-600 mb-8">We combine expertise, technology, and data-driven strategies to deliver exceptional results for our clients.</p>
+                    </div>
+                    
+                    <!-- Features -->
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-chart-line text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Data-Driven Results</h3>
+                                    <p class="text-gray-600">We use advanced analytics and tracking to optimize campaigns for maximum ROI</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-users text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Expert Team</h3>
+                                    <p class="text-gray-600">Our certified professionals have years of experience in digital marketing</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-headset text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">24/7 Support</h3>
+                                    <p class="text-gray-600">Round-the-clock support to ensure your campaigns run smoothly</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-rocket text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Fast Results</h3>
+                                    <p class="text-gray-600">We deliver quick wins while building long-term sustainable growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Ready to Get Started?</h3>
+                        <p class="text-gray-600 mb-4">Get a free consultation and discover how we can help grow your business.</p>
+                        <a href="contact.html" class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-200">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Get Free Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Get answers to common questions about our services</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- FAQ Items -->
+                <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">How long does it take to see results?</h3>
+                        <p class="text-gray-600">Most clients start seeing initial results within 2-4 weeks, with significant improvements typically visible within 3-6 months of consistent optimization.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">What's included in the free audit?</h3>
+                        <p class="text-gray-600">Our free audit includes a comprehensive analysis of your current marketing efforts, competitor research, and actionable recommendations for improvement.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Do you work with small businesses?</h3>
+                        <p class="text-gray-600">Absolutely! We work with businesses of all sizes, from startups to enterprise companies. We tailor our strategies to fit your budget and goals.</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">What's your minimum contract length?</h3>
+                        <p class="text-gray-600">We typically work on a month-to-month basis with a 3-month minimum to ensure we can deliver meaningful results for your business.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">How do you measure success?</h3>
+                        <p class="text-gray-600">We track key metrics like ROI, conversion rates, cost per acquisition, and overall revenue growth to ensure your campaigns are delivering real business value.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Can you help with existing campaigns?</h3>
+                        <p class="text-gray-600">Yes! We can audit and optimize your existing campaigns, or take over management completely. We'll work with your current setup to maximize results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img src="assets/images/logo-white.svg" alt="Traffiqon Logo" class="h-10 w-auto">
+                        <span class="ml-3 text-2xl font-bold">Traffiqon</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        We help businesses scale their digital presence through expert marketing strategies, cutting-edge technology, and data-driven results.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="meta-ads.html" class="text-gray-400 hover:text-white transition-colors duration-200">Meta Ads</a></li>
+                        <li><a href="google-ads.html" class="text-gray-400 hover:text-white transition-colors duration-200">Google Ads</a></li>
+                        <li><a href="youtube-ads.html" class="text-gray-400 hover:text-white transition-colors duration-200">YouTube Ads</a></li>
+                        <li><a href="website-development.html" class="text-gray-400 hover:text-white transition-colors duration-200">Website Development</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-200">All Services</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors duration-200">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">© 2024 Traffiqon. All rights reserved.</p>
+                    <p class="text-gray-400 text-sm mt-4 md:mt-0">Made with ❤️ for growing businesses</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual form handling)
+            setTimeout(() => {
+                // Show success message
+                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
