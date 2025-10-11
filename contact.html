@@ -15,8 +15,18 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        input, select, textarea {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -141,8 +151,8 @@
                     </a>
                     <a href="#contact" class="bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-emerald-700 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                         <span class="flex items-center">
-                            <i class="fas fa-rocket mr-2 text-sm"></i>
-                            Get Free Audit
+                            <i class="fas fa-envelope mr-3"></i>
+                            Get In Touch
                         </span>
                     </a>
                 </div>
@@ -218,72 +228,113 @@
                     <a href="about.html" class="text-gray-600 hover:text-emerald-600 block px-3 py-2 text-base font-semibold">About</a>
                     <a href="portfolio.html" class="text-gray-600 hover:text-emerald-600 block px-3 py-2 text-base font-semibold">Portfolio</a>
                     <a href="contact.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white block px-3 py-2 text-base font-semibold rounded-lg mx-3 mt-2">Contact</a>
+                    <a href="privacy-policy.html" class="text-gray-900 hover:text-emerald-600 block px-3 py-2 text-base font-semibold mx-3 mt-2">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative py-32 bg-gradient-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+    <section class="relative py-28 bg-gray-900 text-white overflow-hidden">
         <!-- Animated Background -->
         <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-blue-500/5"></div>
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2310b981" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/50 via-gray-900 to-teal-900/50"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%2310b981\" fill-opacity=\"0.1\"%3E%3Cpath d=\"M50 10 L90 50 L50 90 L10 50 Z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+            <div class="absolute top-10 left-10 w-64 h-64 bg-emerald-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
         </div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full text-white text-sm font-semibold mb-8 shadow-lg">
-                    <i class="fas fa-envelope mr-3"></i>
-                    Get In Touch
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side: Text Content -->
+                <div class="text-left" data-aos="fade-right" data-aos-delay="100">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                        <span class="block">Let’s Elevate Your Business</span>
+                        <span class="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Contact Traffiqon Today</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-lg mb-8">
+                        Partner with us to unlock your brand’s potential. Request a free marketing audit or consultation to start driving results.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-teal-600 hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-3"></i>
+                            Start Now
+                        </a>
+                        <a href="tel:+15551234567" class="inline-flex items-center bg-transparent border-2 border-emerald-400 px-6 py-4 rounded-xl font-semibold text-lg hover:bg-emerald-400/10 hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+                            <i class="fas fa-phone mr-3"></i>
+                            Call Us
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-                    Let's Start Your
-                    <span class="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Success Story</span>
-                </h1>
-                <p class="text-xl text-gray-700 mb-10 leading-relaxed max-w-3xl mx-auto font-medium">
-                    Ready to transform your business with our expert digital marketing services? Get in touch with our team for a free consultation and discover how we can help you achieve your goals.
-                </p>
+                <!-- Right Side: Visual Element -->
+                <div class="relative hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+                    <div class="relative w-full h-96 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-2xl shadow-2xl transform rotate-3">
+                        <div class="absolute inset-2 bg-gray-800 rounded-xl flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-rocket text-emerald-400 text-5xl mb-4"></i>
+                                <p class="text-xl font-semibold text-white">Launch Your Growth</p>
+                                <p class="text-gray-400">Expert strategies for digital success</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Form Section -->
     <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <!-- Left Side - Contact Form -->
-                <div data-aos="fade-right">
-                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-                        <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
-                        
-                        <form id="contact-form" class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200" placeholder="Your full name">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200" placeholder="your@email.com">
-                                </div>
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Contact Form -->
+            <div class="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4 text-center">Contact Us</h2>
+                <p class="text-gray-600 mb-8 text-center text-sm">Let us help you grow your business. Fill out the form below, and we’ll get back to you within 24 hours.</p>
+                
+                <form id="contact-form" class="space-y-5">
+                    <div class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fas fa-user text-gray-400 text-sm"></i>
+                                </span>
+                                <input type="text" id="name" name="name" required class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300" placeholder="Enter your full name">
                             </div>
-                            
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200" placeholder="+1 (555) 123-4567">
-                                </div>
-                                <div>
-                                    <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">Company Name</label>
-                                    <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200" placeholder="Your company">
-                                </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fas fa-envelope text-gray-400 text-sm"></i>
+                                </span>
+                                <input type="email" id="email" name="email" required class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300" placeholder="Enter your email">
                             </div>
-                            
-                            <div>
-                                <label for="service" class="block text-sm font-semibold text-gray-700 mb-2">Service Interested In</label>
-                                <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fas fa-phone text-gray-400 text-sm"></i>
+                                </span>
+                                <input type="tel" id="phone" name="phone" class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-1.5">Company Name</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fas fa-building text-gray-400 text-sm"></i>
+                                </span>
+                                <input type="text" id="company" name="company" class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300" placeholder="Enter your company name">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1.5">Service Interested In</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fas fa-th-large text-gray-400 text-sm"></i>
+                                </span>
+                                <select id="service" name="service" class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300 appearance-none">
                                     <option value="">Select a service</option>
                                     <option value="meta-ads">Meta Ads (Facebook & Instagram)</option>
                                     <option value="google-ads">Google Ads</option>
@@ -292,11 +343,18 @@
                                     <option value="all-services">All Services</option>
                                     <option value="consultation">Free Consultation</option>
                                 </select>
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fas fa-chevron-down text-gray-400 text-sm"></i>
+                                </span>
                             </div>
-                            
-                            <div>
-                                <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">Monthly Budget</label>
-                                <select id="budget" name="budget" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200">
+                        </div>
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-gray-700 mb-1.5">Monthly Budget</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fas fa-dollar-sign text-gray-400 text-sm"></i>
+                                </span>
+                                <select id="budget" name="budget" class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300 appearance-none">
                                     <option value="">Select budget range</option>
                                     <option value="under-5k">Under $5,000</option>
                                     <option value="5k-10k">$5,000 - $10,000</option>
@@ -304,106 +362,91 @@
                                     <option value="25k-50k">$25,000 - $50,000</option>
                                     <option value="over-50k">Over $50,000</option>
                                 </select>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
-                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-200 resize-none" placeholder="Tell us about your project and goals..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-emerald-600 hover:to-teal-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                                <span class="flex items-center justify-center">
-                                    <i class="fas fa-paper-plane mr-3"></i>
-                                    Send Message
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fas fa-chevron-down text-gray-400 text-sm"></i>
                                 </span>
-                            </button>
-                        </form>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50 text-gray-900 placeholder-gray-400 transition-all duration-300 resize-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-3 rounded-lg font-medium hover:from-emerald-700 hover:to-teal-700 hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Submit Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="mt-12 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Other Ways to Reach Us</h2>
+                <p class="text-gray-600 mb-8 text-center text-sm">Choose your preferred method to connect with our team.</p>
+                
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-emerald-600 text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Email</h3>
+                                <a href="mailto:hello@traffiqon.com" class="text-gray-600 text-sm hover:text-emerald-600">hello@traffiqon.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-blue-600 text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Phone</h3>
+                                <a href="tel:+15551234567" class="text-gray-600 text-sm hover:text-emerald-600">+1 (555) 123-4567</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-green-600 text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">WhatsApp</h3>
+                                <a href="https://wa.me/15551234567" class="text-gray-600 text-sm hover:text-emerald-600">+1 (555) 123-4567</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Address</h3>
+                                <p class="text-gray-600 text-sm">123 Business Street, Suite 100<br>City, State 12345</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Right Side - Contact Information -->
-                <div data-aos="fade-left" class="space-y-8">
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-                        <p class="text-gray-600 mb-8">We're here to help you succeed. Reach out to us through any of these channels.</p>
-                    </div>
-                    
-                    <!-- Contact Cards -->
-                    <div class="space-y-6">
-                        <!-- Email -->
-                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-envelope text-white text-lg"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Email Us</h3>
-                                    <p class="text-gray-600">hello@traffiqon.com</p>
-                                    <p class="text-sm text-gray-500">We'll respond within 24 hours</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Phone -->
-                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-phone text-white text-lg"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Call Us</h3>
-                                    <p class="text-gray-600">+1 (555) 123-4567</p>
-                                    <p class="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- WhatsApp -->
-                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fab fa-whatsapp text-white text-lg"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">WhatsApp</h3>
-                                    <p class="text-gray-600">+1 (555) 123-4567</p>
-                                    <p class="text-sm text-gray-500">Quick responses available</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Address -->
-                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-map-marker-alt text-white text-lg"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Visit Us</h3>
-                                    <p class="text-gray-600">123 Business Street<br>Suite 100, City, State 12345</p>
-                                    <p class="text-sm text-gray-500">By appointment only</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Media -->
-                    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-gradient-to-r from-pink-500 to-rose-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
+                <!-- Social Media -->
+                <div class="mt-8 text-center">
+                    <h3 class="text-sm font-medium text-gray-900 mb-4">Follow Us</h3>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-emerald-100 hover:text-emerald-600 transition-all duration-300">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-emerald-100 hover:text-emerald-600 transition-all duration-300">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-emerald-100 hover:text-emerald-600 transition-all duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-emerald-100 hover:text-emerald-600 transition-all duration-300">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -505,7 +548,7 @@
                         <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
                         <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors duration-200">Portfolio</a></li>
                         <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a></li>
                     </ul>
                 </div>
@@ -543,7 +586,7 @@
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Sending...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitBtn.disabled = true;
             
             // Simulate form submission (replace with actual form handling)
