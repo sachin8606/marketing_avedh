@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Traffiqon - Premium Digital Marketing Solutions</title>
+ <meta name="description" content="Premium digital marketing services for global success. SEO, PPC, Social Media Marketing and more.">
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ :root {
+ --primary: #ff6b35;
+ --primary-dark: #ff5722;
+ --primary-light: #ff8c42;
+ --accent: #ffb84d;
+ --bg-light: #fafafa;
+ --bg-white: #ffffff;
+ --text-dark: #1a1a1a;
+ --text-gray: #6b7280;
+ --border: #e5e7eb;
+ }
+
+ [data-theme="dark"] {
+ --primary: #ff7849;
+ --primary-dark: #ff6b35;
+ --primary-light: #ff8c5a;
+ --accent: #ffc266;
+ --bg-light: #0f0f0f;
+ --bg-white: #1a1a1a;
+ --text-dark: #ffffff;
+ --text-gray: #a0a0a0;
+ --border: #2a2a2a;
+ }
+
+ body {
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+ color: var(--text-dark);
+ line-height: 1.6;
+ overflow-x: hidden;
+ background: var(--bg-white);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ /* Theme Toggle Button */
+ .theme-toggle {
+ position: fixed;
+ bottom: 30px;
+ right: 30px;
+ width: 60px;
+ height: 60px;
+ background: var(--primary);
+ border-radius: 50%;
+ border: none;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 24px;
+ color: white;
+ box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+ transition: all 0.3s ease;
+ z-index: 1001;
+ }
+
+ .theme-toggle:hover {
+ transform: scale(1.1) rotate(15deg);
+ box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+ }
+
+ .theme-toggle i {
+ transition: transform 0.3s ease;
+ }
+
+ /* Navigation */
+ nav {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ background: rgba(255, 255, 255, 0.95);
+ backdrop-filter: blur(10px);
+ z-index: 1000;
+ border-bottom: 1px solid var(--border);
+ transition: all 0.3s ease;
+ }
+
+ [data-theme="dark"] nav {
+ background: rgba(26, 26, 26, 0.95);
+ }
+
+ nav.scrolled {
+ box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+ }
+
+ .nav-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 40px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 80px;
+ }
+
+ .logo {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ font-size: 24px;
+ font-weight: 700;
+ color: var(--text-dark);
+ text-decoration: none;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+
+ .logo-icon {
+ width: 40px;
+ height: 40px;
+ background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-size: 20px;
+ }
+
+ .nav-links {
+ display: flex;
+ gap: 40px;
+ align-items: center;
+ list-style: none;
+ }
+
+ .nav-links a {
+ color: var(--text-dark);
+ text-decoration: none;
+ font-size: 15px;
+ font-weight: 500;
+ transition: color 0.3s ease;
+ position: relative;
+ }
+
+ .nav-links a:hover {
+ color: var(--primary);
+ }
+
+ .nav-links a::after {
+ content: '';
+ position: absolute;
+ bottom: -5px;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: var(--primary);
+ transition: width 0.3s ease;
+ }
+
+ .nav-links a:hover::after {
+ width: 100%;
+ }
+
+ .nav-cta {
+ display: flex;
+ gap: 20px;
+ align-items: center;
+ }
+
+ .booking-info {
+ font-size: 14px;
+ color: var(--text-gray);
+ }
+
+ .cta-btn {
+ background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+ color: white;
+ padding: 12px 28px;
+ border-radius: 50px;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 14px;
+ transition: all 0.3s ease;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+
+ .cta-btn:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+ }
+
+ .mobile-menu-btn {
+ display: none;
+ background: none;
+ border: none;
+ font-size: 24px;
+ cursor: pointer;
+ color: var(--text-dark);
+ }
+
+ /* Hero Section */
+ .hero {
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ padding: 120px 40px 80px;
+ position: relative;
+ overflow: hidden;
+ background: var(--bg-light);
+ }
+
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ right: -20%;
+ width: 800px;
+ height: 800px;
+ background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 184, 77, 0.2));
+ border-radius: 50%;
+ filter: blur(80px);
+ animation: float 20s ease-in-out infinite;
+ }
+
+ @keyframes float {
+ 0%, 100% { transform: translate(0, 0) rotate(0deg); }
+ 33% { transform: translate(30px, -30px) rotate(120deg); }
+ 66% { transform: translate(-20px, 20px) rotate(240deg); }
+ }
+
+ .hero-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 80px;
+ align-items: center;
+ position: relative;
+ z-index: 1;
+ }
+
+ .hero-content {
+ max-width: 600px;
+ }
+
+ .hero-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 8px 20px;
+ background: rgba(255, 107, 53, 0.1);
+ border-radius: 50px;
+ font-size: 13px;
+ font-weight: 600;
+ color: var(--primary);
+ margin-bottom: 32px;
+ }
+
+ .hero-badge::before {
+ content: '';
+ width: 8px;
+ height: 8px;
+ background: var(--primary);
+ border-radius: 50%;
+ animation: pulse 2s ease-in-out infinite;
+ }
+
+ @keyframes pulse {
+ 0%, 100% { opacity: 1; transform: scale(1); }
+ 50% { opacity: 0.5; transform: scale(1.2); }
+ }
+
+ .hero h1 {
+ font-size: 72px;
+ font-weight: 800;
+ line-height: 1.1;
+ margin-bottom: 32px;
+ font-family: 'Space Grotesk', sans-serif;
+ letter-spacing: -2px;
+ }
+
+ .hero h1 .highlight {
+ background: linear-gradient(135deg, var(--primary), var(--accent));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ position: relative;
+ display: inline-block;
+ }
+
+ .hero p {
+ font-size: 20px;
+ color: var(--text-gray);
+ margin-bottom: 40px;
+ line-height: 1.8;
+ }
+
+ .hero-buttons {
+ display: flex;
+ gap: 20px;
+ margin-bottom: 60px;
+ }
+
+ .btn-primary {
+ background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+ color: white;
+ padding: 18px 40px;
+ border-radius: 50px;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 16px;
+ transition: all 0.3s ease;
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ }
+
+ .btn-primary:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+ }
+
+ .btn-secondary {
+ background: var(--bg-white);
+ color: var(--text-dark);
+ padding: 18px 40px;
+ border-radius: 50px;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 16px;
+ border: 2px solid var(--border);
+ transition: all 0.3s ease;
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ }
+
+ .btn-secondary:hover {
+ border-color: var(--primary);
+ transform: translateY(-3px);
+ }
+
+ .hero-stats {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 40px;
+ padding-top: 40px;
+ border-top: 1px solid var(--border);
+ }
+
+ .stat {
+ text-align: center;
+ }
+
+ .stat-number {
+ font-size: 48px;
+ font-weight: 800;
+ background: linear-gradient(135deg, var(--primary), var(--accent));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ margin-bottom: 8px;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+
+ .stat-label {
+ font-size: 14px;
+ color: var(--text-gray);
+ font-weight: 500;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+
+ /* Hero Visual */
+ .hero-visual {
+ position: relative;
+ height: 600px;
+ }
+
+ .service-card {
+ position: absolute;
+ background: var(--bg-white);
+ border-radius: 20px;
+ padding: 30px;
+ box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+ transition: all 0.3s ease;
+ cursor: pointer;
+ border: 1px solid var(--border);
+ }
+
+ .service-card:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+ }
+
+ .service-card.active {
+ background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+ color: white;
+ border-color: transparent;
+ }
+
+ .service-card.card-1 {
+ top: 0;
+ left: 0;
+ width: 280px;
+ }
+
+ .service-card.card-2 {
+ top: 100px;
+ right: 50px;
+ width: 300px;
+ }
+
+ .service-card.card-3 {
+ bottom: 150px;
+ left: 50px;
+ width: 320px;
+ }
+
+ .service-icon {
+ width: 60px;
+ height: 60px;
+ background: linear-gradient(135deg, var(--primary), var(--accent));
+ border-radius: 16px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 28px;
+ color: white;
+ margin-bottom: 20px;
+ }
+
+ .service-card.active .service-icon {
+ background: rgba(255,255,255,0.2);
+ }
+
+ .service-card h3 {
+ font-size: 22px;
+ font-weight: 700;
+ margin-bottom: 12px;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+
+ .service-card p {
+ font-size: 14px;
+ color: var(--text-gray);
+ line-height: 1.6;
+ }
+
+ .service-card.active p {
+ color: rgba(255,255,255,0.9);
+ }
+
+ /* Services Section */
+ .services {
+ padding: 120px 40px;
+ background: var(--bg-white);
+ }
+
+ .section-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ }
+
+ .section-header {
+ text-align: center;
+ margin-bottom: 80px;
+ }
+
+ .section-badge {
+ display: inline-block;
+ padding: 8px 20px;
+ background: rgba(255, 107, 53, 0.1);
+ border-radius: 50px;
+ font-size: 13px;
+ font-weight: 600;
+ color: var(--primary);
+ margin-bottom: 20px;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+
+ .section-header h2 {
+ font-size: 56px;
+ font-weight: 800;
+ margin-bottom: 20px;
+ font-family: 'Space Grotesk', sans-serif;
+ letter-spacing: -1px;
+ }
+
+ .section-header p {
+ font-size: 20px;
+ color: var(--text-gray);
+ max-width: 700px;
+ margin: 0 auto;
+ }
+
+ .services-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 30px;
+ margin-bottom: 60px;
+ }
+
+ .service-item {
+ background: var(--bg-white);
+ border: 1px solid var(--border);
+ border-radius: 20px;
+ padding: 40px;
+ transition: all 0.3s ease;
+ cursor: pointer;
+ }
+
+ .service-item:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
+ border-color: var(--primary);
+ }
+
+ .service-item-icon {
+ width: 70px;
+ height: 70px;
+ background: linear-gradient(135deg, var(--primary), var(--accent));
+ border-radius: 18px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 32px;
+ color: white;
+ margin-bottom: 24px;
+ }
+
+ .service-item h3 {
+ font-size: 22px;
+ font-weight: 700;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+
+ .service-item p {
+ font-size: 15px;
+ color: var(--text-gray);
+ line-height: 1.7;
+ margin-bottom: 20px;
+ }
+
+ .service-item a {
+ color: var(--primary);
+ font-weight: 600;
+ text-decoration: none;
+ font-size: 15px;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ transition: gap 0.3s ease;
+ }
+
+ .service-item a:hover {
+ gap: 12px;
+ }
+
+ /* About Section */
+ .about {
+ padding: 120px 40px;
+ background: var(--bg-light);
+ }
+
+ .about-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 100px;
+ align-items: center;
+ }
+
+ .about-content h2 {
+ font-size: 56px;
+ font-weight: 800;
+ margin-bottom: 32px;
+ font-family: 'Space Grotesk', sans-serif;
+ letter-spacing: -1px;
+ }
+
+ .about-content p {
+ font-size: 20px;
+ color: var(--text-gray);
+ line-height: 1.8;
+ margin-bottom: 40px;
+ }
+
+ .about-features {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ margin-bottom: 40px;
+ }
+
+ .about-feature {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ font-size: 18px;
+ font-weight: 500;
+ }
+
+ .about-feature i {
+ width: 24px;
+ height: 24px;
+ color: var(--primary);
+ font-size: 20px;
+ }
+
+ .about-image {
+ position: relative;
+ height: 600px;
+ }
+
+ .about-image img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius: 30px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+ }
+
+ /* Contact Section */
+ .contact {
+ padding: 120px 40px;
+ background: var(--bg-white);
+ }
+
+ .contact-container {
+ max-width: 900px;
+ margin: 0 auto;
+ }
+
+ .contact-form {
+ background: var(--bg-white);
+ border: 1px solid var(--border);
+ border-radius: 30px;
+ padding: 60px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+ }
+
+ .form-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px;
+ margin-bottom: 24px;
+ }
+
+ .form-group {
+ margin-bottom: 24px;
+ }
+
+ .form-group label {
+ display: block;
+ font-size: 14px;
+ font-weight: 600;
+ margin-bottom: 12px;
+ color: var(--text-dark);
+ }
+
+ .form-group input,
+ .form-group select,
+ .form-group textarea {
+ width: 100%;
+ padding: 16px 20px;
+ border: 1px solid var(--border);
+ border-radius: 12px;
+ font-size: 15px;
+ font-family: 'Inter', sans-serif;
+ transition: all 0.3s ease;
+ background: var(--bg-white);
+ color: var(--text-dark);
+ }
+
+ .form-group input:focus,
+ .form-group select:focus,
+ .form-group textarea:focus {
+ outline: none;
+ border-color: var(--primary);
+ box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+ }
+
+ .form-group textarea {
+ resize: none;
+ min-height: 150px;
+ }
+
+ .form-submit {
+ text-align: center;
+ margin-top: 32px;
+ }
+
+ .form-submit button {
+ background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+ color: white;
+ padding: 18px 50px;
+ border: none;
+ border-radius: 50px;
+ font-weight: 600;
+ font-size: 16px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+
+ .form-submit button:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+ }
+
+ /* Footer */
+ footer {
+ background: var(--text-dark);
+ color: white;
+ padding: 80px 40px 40px;
+ }
+
+ [data-theme="dark"] footer {
+ background: #0a0a0a;
+ }
+
+ .footer-container {
+ max-width: 1400px;
+ margin: 0 auto;
+ }
+
+ .footer-grid {
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr;
+ gap: 60px;
+ margin-bottom: 60px;
+ }
+
+ .footer-brand p {
+ color: rgba(255,255,255,0.7);
+ line-height: 1.8;
+ margin: 20px 0 30px;
+ max-width: 400px;
+ }
+
+ .footer-social {
+ display: flex;
+ gap: 16px;
+ }
+
+ .footer-social a {
+ width: 44px;
+ height: 44px;
+ background: rgba(255,255,255,0.1);
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ text-decoration: none;
+ transition: all 0.3s ease;
+ }
+
+ .footer-social a:hover {
+ background: var(--primary);
+ transform: translateY(-3px);
+ }
+
+ .footer-section h3 {
+ font-size: 18px;
+ font-weight: 700;
+ margin-bottom: 24px;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+
+ .footer-section ul {
+ list-style: none;
+ }
+
+ .footer-section ul li {
+ margin-bottom: 12px;
+ }
+
+ .footer-section ul li a {
+ color: rgba(255,255,255,0.7);
+ text-decoration: none;
+ transition: all 0.3s ease;
+ display: inline-block;
+ }
+
+ .footer-section ul li a:hover {
+ color: white;
+ transform: translateX(5px);
+ }
+
+ .footer-bottom {
+ padding-top: 40px;
+ border-top: 1px solid rgba(255,255,255,0.1);
+ text-align: center;
+ color: rgba(255,255,255,0.5);
+ }
+
+ /* Responsive */
+ @media (max-width: 1200px) {
+ .hero h1 { font-size: 56px; }
+ .section-header h2 { font-size: 48px; }
+ .services-grid { grid-template-columns: repeat(2, 1fr); }
+ }
+
+ @media (max-width: 768px) {
+ .nav-links { display: none; }
+ .booking-info { display: none; }
+ .mobile-menu-btn { display: block; }
+ .hero-container { grid-template-columns: 1fr; gap: 40px; }
+ .hero h1 { font-size: 40px; }
+ .hero-visual { display: none; }
+ .services-grid { grid-template-columns: 1fr; }
+ .about-container { grid-template-columns: 1fr; gap: 40px; }
+ .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+ .form-grid { grid-template-columns: 1fr; }
+ .contact-form { padding: 40px 30px; }
+ .theme-toggle {
+ bottom: 20px;
+ right: 20px;
+ width: 50px;
+ height: 50px;
+ font-size: 20px;
+ }
+ }
+ </style>
+</head>
+<body>
+ <!-- Theme Toggle Button -->
+ <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+ <i class="fas fa-moon"></i>
+ </button>
+
+ <!-- Navigation -->
+ <nav id="navbar">
+ <div class="nav-container">
+ <a href="#" class="logo">
+ <div class="logo-icon">T</div>
+ Traffiqon
+ </a>
+ 
+ <ul class="nav-links">
+ <li><a href="#home">Work</a></li>
+ <li><a href="#about">About</a></li>
+ <li><a href="#services">Feed</a></li>
+ <li><a href="#contact">Contact</a></li>
+ </ul>
+ 
+ <div class="nav-cta">
+ <span class="booking-info">Booking projects for Q4 2024</span>
+ <a href="#contact" class="cta-btn">
+ Free consultation call
+ <i class="fas fa-arrow-right"></i>
+ </a>
+ </div>
+
+ <button class="mobile-menu-btn">
+ <i class="fas fa-bars"></i>
+ </button>
+ </div>
+ </nav>
+
+ <!-- Hero Section -->
+ <section class="hero" id="home">
+ <div class="hero-container">
+ <div class="hero-content">
+ <div class="hero-badge">Trusted by 500+ Global Companies</div>
+ <h1>
+ Turn Your Traffic Into
+ <span class="highlight">Revenue</span>
+ </h1>
+ <p>
+ We help businesses maximize their online presence with strategic digital marketing, stunning web development, and data-driven advertising campaigns that deliver real results.
+ </p>
+ <div class="hero-buttons">
+ <a href="#contact" class="btn-primary">
+ <i class="fas fa-rocket"></i>
+ Get In Touch
+ </a>
+ <a href="#services" class="btn-secondary">
+ <i class="fas fa-cog"></i>
+ Our Services
+ </a>
+ </div>
+ <div class="hero-stats">
+ <div class="stat">
+ <div class="stat-number">500</div>
+ <div class="stat-label">Happy Clients</div>
+ </div>
+ <div class="stat">
+ <div class="stat-number">1000</div>
+ <div class="stat-label">Projects Completed</div>
+ </div>
+ <div class="stat">
+ <div class="stat-number">98%</div>
+ <div class="stat-label">Success Rate</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="hero-visual">
+ <div class="service-card card-1 active">
+ <div class="service-icon">
+ <i class="fab fa-facebook"></i>
+ </div>
+ <h3>Meta Ads</h3>
+ <p>Facebook & Instagram advertising campaigns that drive targeted traffic</p>
+ </div>
+ <div class="service-card card-2">
+ <div class="service-icon">
+ <i class="fab fa-google"></i>
+ </div>
+ <h3>Google Ads</h3>
+ <p>Search and display advertising on the world's largest platform</p>
+ </div>
+ <div class="service-card card-3">
+ <div class="service-icon">
+ <i class="fas fa-code"></i>
+ </div>
+ <h3>Website Development</h3>
+ <p>Custom websites that convert visitors into customers</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Services Section -->
+ <section class="services" id="services">
+ <div class="section-container">
+ <div class="section-header">
+ <div class="section-badge">Our Services</div>
+ <h2>Premium Digital Marketing Solutions</h2>
+ <p>Comprehensive digital marketing services designed to drive growth and maximize ROI</p>
+ </div>
+
+ <div class="services-grid">
+ <div class="service-item">
+ <div class="service-item-icon">
+ <i class="fab fa-facebook"></i>
+ </div>
+ <h3>Meta Ads</h3>
+ <p>Facebook & Instagram advertising campaigns that drive targeted traffic and conversions.</p>
+ <a href="#">Learn More →</a>
+ </div>
+
+ <div class="service-item">
+ <div class="service-item-icon">
+ <i class="fab fa-google"></i>
+ </div>
+ <h3>Google Ads</h3>
+ <p>Search and display advertising on the world's largest search platform.</p>
+ <a href="#">Learn More →</a>
+ </div>
+
+ <div class="service-item">
+ <div class="service-item-icon">
+ <i class="fab fa-youtube"></i>
+ </div>
+ <h3>YouTube Ads</h3>
+ <p>Video advertising that converts viewers into customers.</p>
+ <a href="#">Learn More →</a>
+ </div>
+
+ <div class="service-item">
+ <div class="service-item-icon">
+ <i class="fas fa-code"></i>
+ </div>
+ <h3>Website Development</h3>
+ <p>Custom websites that convert visitors into customers.</p>
+ <a href="#">Learn More →</a>
+ </div>
+ </div>
+
+ <div style="text-align: center;">
+ <a href="#" class="btn-primary">View All Services</a>
+ </div>
+ </div>
+ </section>
+
+ <!-- About Section -->
+ <section class="about" id="about">
+ <div class="about-container">
+ <div class="about-content">
+ <div class="section-badge">About Us</div>
+ <h2>Driving Digital Success Through Innovation</h2>
+ <p>
+ We are a team of passionate digital marketers dedicated to helping businesses achieve their online goals. With years of experience and a data-driven approach, we deliver results that matter.
+ </p>
+ <div class="about-features">
+ <div class="about-feature">
+ <i class="fas fa-chart-line"></i>
+ <span>Data-Driven Strategies</span>
+ </div>
+ <div class="about-feature">
+ <i class="fas fa-users"></i>
+ <span>Expert Team</span>
+ </div>
+ <div class="about-feature">
+ <i class="fas fa-trophy"></i>
+ <span>Proven Results</span>
+ </div>
+ </div>
+ <a href="#" class="btn-primary">Learn More About Us</a>
+ </div>
+ <div class="about-image">
+ <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Team collaboration">
+ </div>
+ </div>
+ </section>
+
+ <!-- Contact Section -->
+ <section class="contact" id="contact">
+ <div class="contact-container">
+ <div class="section-header">
+ <div class="section-badge">Get In Touch</div>
+ <h2>Ready to Grow Your Business?</h2>
+ <p>Let's discuss how we can help you achieve your digital marketing goals</p>
+ </div>
+
+ <div class="contact-form">
+ <form action="#" method="POST">
+ <div class="form-grid">
+ <div class="form-group">
+ <label for="name">Full Name</label>
+ <input type="text" id="name" name="name" required>
+ </div>
+ <div class="form-group">
+ <label for="email">Email Address</label>
+ <input type="email" id="email" name="email" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <label for="phone">Phone Number</label>
+ <input type="tel" id="phone" name="phone">
+ </div>
+ <div class="form-group">
+ <label for="service">Service Interest</label>
+ <select id="service" name="service">
+ <option value="">Select a service</option>
+ <option value="meta-ads">Meta Ads (Facebook & Instagram)</option>
+ <option value="google-ads">Google Ads</option>
+ <option value="youtube-ads">YouTube Ads</option>
+ <option value="website-development">Website Development</option>
+ <option value="seo">Search Engine Optimization</option>
+ <option value="social">Social Media Marketing</option>
+ <option value="other">Other</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="message">Message</label>
+ <textarea id="message" name="message" required></textarea>
+ </div>
+ <div class="form-submit">
+ <button type="submit">Send Message</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ </section>
+
+ <!-- Footer -->
+ <footer>
+ <div class="footer-container">
+ <div class="footer-grid">
+ <div class="footer-brand">
+ <div class="logo">
+ <div class="logo-icon">T</div>
+ Traffiqon
+ </div>
+ <p>
+ Premium digital marketing services that drive real results. We help businesses grow through strategic, data-driven marketing solutions.
+ </p>
+ <div class="footer-social">
+ <a href="#"><i class="fab fa-facebook-f"></i></a>
+ <a href="#"><i class="fab fa-twitter"></i></a>
+ <a href="#"><i class="fab fa-linkedin-in"></i></a>
+ <a href="#"><i class="fab fa-instagram"></i></a>
+ </div>
+ </div>
+
+ <div class="footer-section">
+ <h3>Services</h3>
+ <ul>
+ <li><a href="#">Meta Ads</a></li>
+ <li><a href="#">Google Ads</a></li>
+ <li><a href="#">YouTube Ads</a></li>
+ <li><a href="#">Website Development</a></li>
+ </ul>
+ </div>
+
+ <div class="footer-section">
+ <h3>Company</h3>
+ <ul>
+ <li><a href="#">About Us</a></li>
+ <li><a href="#">Portfolio</a></li>
+ <li><a href="#">Contact</a></li>
+ <li><a href="#">Privacy Policy</a></li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="footer-bottom">
+ <p>&copy; 2024 Traffiqon. All rights reserved.</p>
+ </div>
+ </div>
+ </footer>
+
+ <script>
+ // Theme Toggle Functionality
+ const themeToggle = document.getElementById('themeToggle');
+ const html = document.documentElement;
+ const themeIcon = themeToggle.querySelector('i');
+
+ // Check for saved theme preference or default to 'light'
+ const currentTheme = localStorage.getItem('theme') || 'light';
+ html.setAttribute('data-theme', currentTheme);
+ updateThemeIcon(currentTheme);
+
+ themeToggle.addEventListener('click', () => {
+ const currentTheme = html.getAttribute('data-theme');
+ const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+ 
+ html.setAttribute('data-theme', newTheme);
+ localStorage.setItem('theme', newTheme);
+ updateThemeIcon(newTheme);
+ });
+
+ function updateThemeIcon(theme) {
+ if (theme === 'dark') {
+ themeIcon.className = 'fas fa-sun';
+ } else {
+ themeIcon.className = 'fas fa-moon';
+ }
+ }
+
+ // Navbar scroll effect
+ window.addEventListener('scroll', () => {
+ const navbar = document.getElementById('navbar');
+ if (window.scrollY > 50) {
+ navbar.classList.add('scrolled');
+ } else {
+ navbar.classList.remove('scrolled');
+ }
+ });
+
+ // Service card rotation
+ const serviceCards = document.querySelectorAll('.service-card');
+ let currentCard = 0;
+
+ setInterval(() => {
+ serviceCards.forEach(card => card.classList.remove('active'));
+ currentCard = (currentCard + 1) % serviceCards.length;
+ serviceCards[currentCard].classList.add('active');
+ }, 3000);
+
+ // Smooth scroll
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ e.preventDefault();
+ const target = document.querySelector(this.getAttribute('href'));
+ if (target) {
+ target.scrollIntoView({
+ behavior: 'smooth',
+ block: 'start'
+ });
+ }
+ });
+ });
+
+ // Counter animation
+ const animateCounters = () => {
+ const counters = document.querySelectorAll('.stat-number');
+ counters.forEach(counter => {
+ const text = counter.textContent;
+ const hasPercent = text.includes('%');
+ const target = parseInt(text);
+ const duration = 2000;
+ const increment = target / (duration / 16);
+ let current = 0;
+
+ const updateCounter = () => {
+ current += increment;
+ if (current < target) {
+ counter.textContent = Math.floor(current) + (hasPercent ? '%' : '');
+ requestAnimationFrame(updateCounter);
+ } else {
+ counter.textContent = target + (hasPercent ? '%' : '');
+ }
+ };
+
+ updateCounter();
+ });
+ };
+
+ // Trigger counter animation when hero is visible
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ animateCounters();
+ observer.unobserve(entry.target);
+ }
+ });
+ }, { threshold: 0.5 });
+
+ observer.observe(document.querySelector('.hero'));
+
+ // Mobile menu toggle
+ const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+ const navLinks = document.querySelector('.nav-links');
+
+ mobileMenuBtn?.addEventListener('click', () => {
+ navLinks.classList.toggle('active');
+ });
+ </script>
+</body>
+</html>
